@@ -24,14 +24,14 @@
     }
   },
   "dependencies": {
-    "i18next": "^26.0.8",
+    "i18next": "^26.2.0",
     "i18next-browser-languagedetector": "^8.0.6",
-    "react-i18next": "^17.0.4"
+    "react-i18next": "^17.0.8"
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
-    "@types/react": "^19.2.14",
-    "react": "^19.2.5",
+    "@types/react": "^19.2.15",
+    "react": "^19.2.6",
     "typescript": "^6"
   },
   "peerDependencies": {

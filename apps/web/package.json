@@ -10,15 +10,15 @@
   },
   "dependencies": {
     "@react-three/drei": "^10.7.7",
-    "@react-three/fiber": "^9.6.0",
+    "@react-three/fiber": "^9.6.1",
     "@repo/i18n": "workspace:*",
     "@repo/tailwind-config": "workspace:*",
     "@repo/ui": "workspace:*",
-    "framer-motion": "^12.38.0",
-    "lucide-react": "^1.11.0",
-    "next": "16.2.4",
-    "react": "19.2.5",
-    "react-dom": "19.2.5",
+    "framer-motion": "^12.40.0",
+    "lucide-react": "^1.16.0",
+    "next": "16.2.6",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
     "three": "^0.184.0"
   },
   "devDependencies": {
@@ -26,9 +26,9 @@
     "@types/node": "^25",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@types/three": "^0.184.0",
+    "@types/three": "^0.184.1",
     "eslint": "^10",
-    "eslint-config-next": "16.2.4",
+    "eslint-config-next": "16.2.6",
     "tailwindcss": "^4",
     "typescript": "^6"
   }
