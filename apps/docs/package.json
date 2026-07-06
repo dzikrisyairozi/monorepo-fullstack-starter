@@ -11,11 +11,11 @@
   "dependencies": {
     "@repo/tailwind-config": "workspace:*",
     "@repo/ui": "workspace:*",
-    "fumadocs-core": "^16.10.6",
+    "fumadocs-core": "^16.10.7",
     "fumadocs-mdx": "^15.0.13",
-    "fumadocs-ui": "^16.10.6",
-    "lucide-react": "^1.22.0",
-    "next": "16.2.9",
+    "fumadocs-ui": "^16.10.7",
+    "lucide-react": "^1.23.0",
+    "next": "16.2.10",
     "next-themes": "^0.4.6",
     "react": "19.2.7",
     "react-dom": "19.2.7"
@@ -27,7 +27,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^10",
-    "eslint-config-next": "16.2.9",
+    "eslint-config-next": "16.2.10",
     "tailwindcss": "^4",
     "typescript": "^6"
   }
