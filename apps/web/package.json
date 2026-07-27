@@ -15,10 +15,10 @@
     "@repo/tailwind-config": "workspace:*",
     "@repo/ui": "workspace:*",
     "framer-motion": "^12.42.2",
-    "lucide-react": "^1.25.0",
-    "next": "16.2.10",
-    "react": "19.2.7",
-    "react-dom": "19.2.7",
+    "lucide-react": "^1.27.0",
+    "next": "16.2.12",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
     "three": "^0.185.1"
   },
   "devDependencies": {
@@ -28,7 +28,7 @@
     "@types/react-dom": "^19",
     "@types/three": "^0.185.1",
     "eslint": "^10",
-    "eslint-config-next": "16.2.10",
+    "eslint-config-next": "16.2.12",
     "tailwindcss": "^4",
     "typescript": "^7"
   }
