@@ -37,6 +37,8 @@
   },
   "nav": {
     "teams": {
+      "label": "Teams",
+      "addTeam": "Add team",
       "starter": "Dashboard Starter",
       "starterPlan": "Vite + Shadcn UI",
       "acme": "Acme Inc.",
@@ -73,6 +75,7 @@
     "settingsAppearance": "Appearance",
     "settingsNotifications": "Notifications",
     "settingsDisplay": "Display",
-    "helpCenter": "Help Center"
+    "helpCenter": "Help Center",
+    "signOut": "Sign out"
   }
 }

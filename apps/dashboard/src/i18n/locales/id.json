@@ -37,6 +37,8 @@
   },
   "nav": {
     "teams": {
+      "label": "Tim",
+      "addTeam": "Tambah tim",
       "starter": "Dashboard Starter",
       "starterPlan": "Vite + Shadcn UI",
       "acme": "Acme Inc.",
@@ -73,6 +75,7 @@
     "settingsAppearance": "Tampilan",
     "settingsNotifications": "Notifikasi",
     "settingsDisplay": "Layar",
-    "helpCenter": "Pusat Bantuan"
+    "helpCenter": "Pusat Bantuan",
+    "signOut": "Keluar"
   }
 }
