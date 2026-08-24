@@ -9,92 +9,96 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as LayoutRouteImport } from './routes/_layout'
-import { Route as LayoutIndexRouteImport } from './routes/_layout.index'
-import { Route as LayoutSandboxRouteImport } from './routes/_layout.sandbox'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
+import { Route as AuthenticatedIndexRouteImport } from './routes/_authenticated/index'
+import { Route as AuthenticatedSandboxRouteImport } from './routes/_authenticated/sandbox'
 
-const LayoutRoute = LayoutRouteImport.update({
-  id: '/_layout',
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
   getParentRoute: () => rootRouteImport,
 } as any)
-const LayoutIndexRoute = LayoutIndexRouteImport.update({
+const AuthenticatedIndexRoute = AuthenticatedIndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => LayoutRoute,
+  getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
-const LayoutSandboxRoute = LayoutSandboxRouteImport.update({
+const AuthenticatedSandboxRoute = AuthenticatedSandboxRouteImport.update({
   id: '/sandbox',
   path: '/sandbox',
-  getParentRoute: () => LayoutRoute,
+  getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof LayoutIndexRoute
-  '/sandbox': typeof LayoutSandboxRoute
+  '/': typeof AuthenticatedIndexRoute
+  '/sandbox': typeof AuthenticatedSandboxRoute
 }
 export interface FileRoutesByTo {
-  '/sandbox': typeof LayoutSandboxRoute
-  '/': typeof LayoutIndexRoute
+  '/sandbox': typeof AuthenticatedSandboxRoute
+  '/': typeof AuthenticatedIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/_layout': typeof LayoutRouteWithChildren
-  '/_layout/sandbox': typeof LayoutSandboxRoute
-  '/_layout/': typeof LayoutIndexRoute
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
+  '/_authenticated/sandbox': typeof AuthenticatedSandboxRoute
+  '/_authenticated/': typeof AuthenticatedIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths: '/' | '/sandbox'
   fileRoutesByTo: FileRoutesByTo
   to: '/sandbox' | '/'
-  id: '__root__' | '/_layout' | '/_layout/sandbox' | '/_layout/'
+  id:
+    | '__root__'
+    | '/_authenticated'
+    | '/_authenticated/sandbox'
+    | '/_authenticated/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  LayoutRoute: typeof LayoutRouteWithChildren
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/_layout': {
-      id: '/_layout'
+    '/_authenticated': {
+      id: '/_authenticated'
       path: ''
       fullPath: '/'
-      preLoaderRoute: typeof LayoutRouteImport
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/_layout/': {
-      id: '/_layout/'
+    '/_authenticated/': {
+      id: '/_authenticated/'
       path: '/'
       fullPath: '/'
-      preLoaderRoute: typeof LayoutIndexRouteImport
-      parentRoute: typeof LayoutRoute
+      preLoaderRoute: typeof AuthenticatedIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
     }
-    '/_layout/sandbox': {
-      id: '/_layout/sandbox'
+    '/_authenticated/sandbox': {
+      id: '/_authenticated/sandbox'
       path: '/sandbox'
       fullPath: '/sandbox'
-      preLoaderRoute: typeof LayoutSandboxRouteImport
-      parentRoute: typeof LayoutRoute
+      preLoaderRoute: typeof AuthenticatedSandboxRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
     }
   }
 }
 
-interface LayoutRouteChildren {
-  LayoutSandboxRoute: typeof LayoutSandboxRoute
-  LayoutIndexRoute: typeof LayoutIndexRoute
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedSandboxRoute: typeof AuthenticatedSandboxRoute
+  AuthenticatedIndexRoute: typeof AuthenticatedIndexRoute
 }
 
-const LayoutRouteChildren: LayoutRouteChildren = {
-  LayoutSandboxRoute: LayoutSandboxRoute,
-  LayoutIndexRoute: LayoutIndexRoute,
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedSandboxRoute: AuthenticatedSandboxRoute,
+  AuthenticatedIndexRoute: AuthenticatedIndexRoute,
 }
 
-const LayoutRouteWithChildren =
-  LayoutRoute._addFileChildren(LayoutRouteChildren)
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
-  LayoutRoute: LayoutRouteWithChildren,
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

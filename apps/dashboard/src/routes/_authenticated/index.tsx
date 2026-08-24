@@ -26,6 +26,7 @@ import { useTranslation, LanguageSwitcher } from '@repo/i18n';
 import { Header } from '../../components/layout/header';
 import { Main } from '../../components/layout/main';
 import { ThemeToggle } from '../../components/theme-toggle';
+import { Search } from '../../components/search';
 
 const chartData = [
   { month: 'January', desktop: 186, mobile: 80 },
@@ -84,6 +85,7 @@ function Index() {
   return (
     <>
       <Header>
+        <Search />
         <LanguageSwitcher />
         <ThemeToggle />
       </Header>

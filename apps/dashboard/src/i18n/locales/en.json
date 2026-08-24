@@ -2,6 +2,15 @@
   "layout": {
     "skipToMain": "Skip to main content"
   },
+  "commandMenu": {
+    "title": "Command Menu",
+    "placeholder": "Type a command or search...",
+    "empty": "No results found.",
+    "theme": "Theme",
+    "lightTheme": "Light",
+    "darkTheme": "Dark",
+    "systemTheme": "System"
+  },
   "sidebar": {
     "title": "Dashboard Starter",
     "overview": "Overview",

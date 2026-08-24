@@ -2,6 +2,15 @@
   "layout": {
     "skipToMain": "Lewati ke konten utama"
   },
+  "commandMenu": {
+    "title": "Menu Perintah",
+    "placeholder": "Ketik perintah atau cari...",
+    "empty": "Tidak ada hasil ditemukan.",
+    "theme": "Tema",
+    "lightTheme": "Terang",
+    "darkTheme": "Gelap",
+    "systemTheme": "Sistem"
+  },
   "sidebar": {
     "title": "Dashboard Starter",
     "overview": "Ringkasan",

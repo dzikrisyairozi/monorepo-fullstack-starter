@@ -135,6 +135,7 @@ import { useTranslation, LanguageSwitcher } from '@repo/i18n';
 import { Header } from '../../components/layout/header';
 import { Main } from '../../components/layout/main';
 import { ThemeToggle } from '../../components/theme-toggle';
+import { Search } from '../../components/search';
 
 export const Route = createFileRoute('/_authenticated/sandbox')({
   component: SandboxPage,
@@ -178,6 +179,7 @@ function SandboxPage() {
   return (
     <>
       <Header>
+        <Search />
         <LanguageSwitcher />
         <ThemeToggle />
       </Header>

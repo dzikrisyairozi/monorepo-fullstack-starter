@@ -15,6 +15,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ThemeProvider } from './components/theme-provider';
 import { FontProvider } from './context/font-provider';
 import { LayoutProvider } from './context/layout-provider';
+import { SearchProvider } from './context/search-provider';
 import { I18nProvider } from '@repo/i18n';
 import './index.css';
 
@@ -52,7 +53,9 @@ createRoot(document.getElementById('root')!).render(
         <ThemeProvider defaultTheme="dark" attribute="class">
           <FontProvider>
             <LayoutProvider>
-              <RouterProvider router={router} />
+              <SearchProvider>
+                <RouterProvider router={router} />
+              </SearchProvider>
             </LayoutProvider>
           </FontProvider>
         </ThemeProvider>
