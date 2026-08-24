@@ -1,5 +1,6 @@
 {
   "validation": {
+    "nameRequired": "Nama wajib diisi.",
     "emailRequired": "Email wajib diisi.",
     "emailInvalid": "Masukkan alamat email yang valid.",
     "passwordRequired": "Kata sandi wajib diisi.",
@@ -15,6 +16,22 @@
     "forgotPassword": "Lupa kata sandi?",
     "noAccount": "Belum punya akun?",
     "createAccount": "Buat akun"
+  },
+  "signUp": {
+    "title": "Buat akun",
+    "description": "Masukkan detail Anda di bawah untuk membuat akun.",
+    "name": "Nama",
+    "confirmPassword": "Konfirmasi Kata Sandi",
+    "submit": "Buat akun",
+    "haveAccount": "Sudah punya akun?",
+    "signIn": "Masuk"
+  },
+  "forgotPassword": {
+    "title": "Lupa kata sandi",
+    "description": "Masukkan email Anda dan kami akan mengirimkan tautan untuk mengatur ulang kata sandi.",
+    "submit": "Kirim tautan reset",
+    "successDescription": "Jika akun untuk {{email}} ada, tautan reset sedang dalam perjalanan.",
+    "backToSignIn": "Kembali ke halaman masuk"
   },
   "layout": {
     "skipToMain": "Lewati ke konten utama"

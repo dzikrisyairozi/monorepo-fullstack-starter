@@ -1,11 +1,7 @@
-import { useNavigate, type LinkProps } from '@tanstack/react-router';
+import { useNavigate } from '@tanstack/react-router';
 import { useTranslation } from '@repo/i18n';
 import { ConfirmDialog } from './confirm-dialog';
 import { useAuthStore } from '../stores/auth-store';
-
-// /sign-in lands in a later phase - typed loosely so this compiles
-// against the current route tree in the meantime.
-const SIGN_IN_URL: LinkProps['to'] | (string & {}) = '/sign-in';
 
 export function SignOutDialog({
   open,
@@ -28,7 +24,7 @@ export function SignOutDialog({
       onConfirm={() => {
         signOut();
         onOpenChange(false);
-        navigate({ to: SIGN_IN_URL });
+        navigate({ to: '/sign-in' });
       }}
     />
   );

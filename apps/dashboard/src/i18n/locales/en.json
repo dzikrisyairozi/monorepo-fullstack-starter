@@ -1,5 +1,6 @@
 {
   "validation": {
+    "nameRequired": "Name is required.",
     "emailRequired": "Email is required.",
     "emailInvalid": "Enter a valid email address.",
     "passwordRequired": "Password is required.",
@@ -15,6 +16,22 @@
     "forgotPassword": "Forgot your password?",
     "noAccount": "Don't have an account?",
     "createAccount": "Create one"
+  },
+  "signUp": {
+    "title": "Create an account",
+    "description": "Enter your details below to create your account.",
+    "name": "Name",
+    "confirmPassword": "Confirm Password",
+    "submit": "Create account",
+    "haveAccount": "Already have an account?",
+    "signIn": "Sign in"
+  },
+  "forgotPassword": {
+    "title": "Forgot password",
+    "description": "Enter your email and we'll send you a link to reset your password.",
+    "submit": "Send reset link",
+    "successDescription": "If an account exists for {{email}}, a reset link is on its way.",
+    "backToSignIn": "Back to sign in"
   },
   "layout": {
     "skipToMain": "Skip to main content"
