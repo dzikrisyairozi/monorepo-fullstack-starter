@@ -13,7 +13,7 @@ export type Font = (typeof FONTS)[number];
 
 const FONT_COOKIE_NAME = 'dashboard_font';
 const FONT_COOKIE_MAX_AGE = 60 * 60 * 24 * 7;
-const DEFAULT_FONT: Font = 'outfit';
+export const DEFAULT_FONT: Font = 'outfit';
 
 type FontContextType = {
   font: Font;

@@ -2,6 +2,26 @@
   "layout": {
     "skipToMain": "Lewati ke konten utama"
   },
+  "configDrawer": {
+    "title": "Konfigurasi",
+    "description": "Playground langsung untuk tata letak sidebar, tema, dan font.",
+    "sidebarVariant": "Varian sidebar",
+    "variantInset": "Inset",
+    "variantSidebar": "Sidebar",
+    "variantFloating": "Melayang",
+    "sidebarCollapsible": "Mode collapse",
+    "collapsibleOffcanvas": "Offcanvas",
+    "collapsibleIcon": "Ikon",
+    "collapsibleNone": "Tidak ada",
+    "theme": "Tema",
+    "font": {
+      "label": "Font",
+      "outfit": "Outfit",
+      "inter": "Inter",
+      "system": "Sistem"
+    },
+    "reset": "Kembalikan ke default"
+  },
   "commandMenu": {
     "title": "Menu Perintah",
     "placeholder": "Ketik perintah atau cari...",

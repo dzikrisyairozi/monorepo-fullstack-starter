@@ -25,7 +25,8 @@ import {
 import { useTranslation, LanguageSwitcher } from '@repo/i18n';
 import { Header } from '../../components/layout/header';
 import { Main } from '../../components/layout/main';
-import { ThemeToggle } from '../../components/theme-toggle';
+import { ThemeSwitch } from '../../components/theme-switch';
+import { ConfigDrawer } from '../../components/config-drawer';
 import { Search } from '../../components/search';
 
 const chartData = [
@@ -87,7 +88,8 @@ function Index() {
       <Header>
         <Search />
         <LanguageSwitcher />
-        <ThemeToggle />
+        <ThemeSwitch />
+        <ConfigDrawer />
       </Header>
       <Main>
         <div className="space-y-8">

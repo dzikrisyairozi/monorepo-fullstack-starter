@@ -2,6 +2,26 @@
   "layout": {
     "skipToMain": "Skip to main content"
   },
+  "configDrawer": {
+    "title": "Configuration",
+    "description": "Live playground for sidebar layout, theme, and font.",
+    "sidebarVariant": "Sidebar variant",
+    "variantInset": "Inset",
+    "variantSidebar": "Sidebar",
+    "variantFloating": "Floating",
+    "sidebarCollapsible": "Collapsible mode",
+    "collapsibleOffcanvas": "Offcanvas",
+    "collapsibleIcon": "Icon",
+    "collapsibleNone": "None",
+    "theme": "Theme",
+    "font": {
+      "label": "Font",
+      "outfit": "Outfit",
+      "inter": "Inter",
+      "system": "System"
+    },
+    "reset": "Reset to defaults"
+  },
   "commandMenu": {
     "title": "Command Menu",
     "placeholder": "Type a command or search...",
