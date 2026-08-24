@@ -168,7 +168,20 @@
     "recentSalesDescription": "Anda melakukan 265 penjualan bulan ini.",
     "checkSandbox": "Lihat Sandbox UI",
     "desktop": "Desktop",
-    "mobile": "Seluler"
+    "mobile": "Seluler",
+    "tabs": {
+      "overview": "Ringkasan",
+      "analytics": "Analitik"
+    },
+    "analytics": {
+      "title": "Analitik",
+      "description": "Sesi dan tampilan halaman selama 6 bulan terakhir.",
+      "sessions": "Sesi",
+      "pageviews": "Tampilan Halaman",
+      "activeUsers": "Pengguna Aktif",
+      "bounceRate": "Rasio Pentalan",
+      "avgSession": "Rata-rata Sesi"
+    }
   },
   "sandbox": {
     "badge": "Sistem Desain",

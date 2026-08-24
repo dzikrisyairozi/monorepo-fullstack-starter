@@ -3,7 +3,13 @@ import { SidebarTrigger } from '@repo/ui/components/ui/sidebar';
 import { Separator } from '@repo/ui/components/ui/separator';
 import { cn } from '@repo/ui/lib/utils';
 
-export function Header({ children }: { children?: ReactNode }) {
+export function Header({
+  children,
+  nav,
+}: {
+  children?: ReactNode;
+  nav?: ReactNode;
+}) {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -22,7 +28,8 @@ export function Header({ children }: { children?: ReactNode }) {
     >
       <SidebarTrigger className="-ml-1" />
       <Separator orientation="vertical" className="h-4" />
-      <div className="ml-auto flex items-center gap-2 sm:gap-4">{children}</div>
+      {nav}
+      <div className="ml-auto flex items-center gap-1 sm:gap-4">{children}</div>
     </header>
   );
 }

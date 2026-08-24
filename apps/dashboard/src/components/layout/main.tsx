@@ -14,7 +14,7 @@ export function Main({
         'relative flex-1',
         fixed
           ? 'flex flex-col overflow-hidden'
-          : 'overflow-auto p-3 pb-20 sm:p-6 lg:p-8',
+          : 'overflow-y-auto overflow-x-hidden p-3 pb-20 sm:p-6 lg:p-8',
         className,
       )}
       {...props}

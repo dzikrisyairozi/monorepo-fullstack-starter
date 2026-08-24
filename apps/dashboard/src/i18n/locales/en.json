@@ -168,7 +168,20 @@
     "recentSalesDescription": "You made 265 sales this month.",
     "checkSandbox": "Check out the UI Sandbox",
     "desktop": "Desktop",
-    "mobile": "Mobile"
+    "mobile": "Mobile",
+    "tabs": {
+      "overview": "Overview",
+      "analytics": "Analytics"
+    },
+    "analytics": {
+      "title": "Analytics",
+      "description": "Sessions and pageviews over the last 6 months.",
+      "sessions": "Sessions",
+      "pageviews": "Pageviews",
+      "activeUsers": "Active Users",
+      "bounceRate": "Bounce Rate",
+      "avgSession": "Avg. Session"
+    }
   },
   "sandbox": {
     "badge": "Design System",
