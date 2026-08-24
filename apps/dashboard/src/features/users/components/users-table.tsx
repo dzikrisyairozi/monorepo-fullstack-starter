@@ -67,6 +67,11 @@ export function UsersTable({ data }: { data: User[] }) {
   ];
   const searchValue = urlState.filters.search ?? '';
 
+  // TanStack Table's useReactTable() returns functions that aren't
+  // referentially stable across renders, which the React Compiler can't
+  // safely memoize - a known incompatibility with the library itself,
+  // not a bug here.
+  // eslint-disable-next-line react-hooks/incompatible-library
   const table = useReactTable({
     data,
     columns,
