@@ -274,5 +274,40 @@
     "deleteUserDescription": "Are you sure you want to delete {{username}}? This action cannot be undone.",
     "deleteUsers": "Delete Users",
     "deleteUsersDescription": "Are you sure you want to delete {{count}} user(s)? This action cannot be undone."
+  },
+  "tasks": {
+    "title": "Tasks",
+    "description": "Here is a list of your tasks for this project.",
+    "searchPlaceholder": "Filter by title...",
+    "editTask": "Edit Task",
+    "deleteTask": "Delete Task",
+    "columns": {
+      "id": "Task",
+      "title": "Title",
+      "status": "Status",
+      "priority": "Priority",
+      "actions": "Actions"
+    },
+    "status": {
+      "backlog": "Backlog",
+      "todo": "Todo",
+      "in-progress": "In Progress",
+      "done": "Done",
+      "canceled": "Canceled"
+    },
+    "label": {
+      "bug": "Bug",
+      "feature": "Feature",
+      "documentation": "Documentation"
+    },
+    "priority": {
+      "low": "Low",
+      "medium": "Medium",
+      "high": "High"
+    },
+    "actions": {
+      "edit": "Edit",
+      "delete": "Delete"
+    }
   }
 }

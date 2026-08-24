@@ -274,5 +274,40 @@
     "deleteUserDescription": "Apakah Anda yakin ingin menghapus {{username}}? Tindakan ini tidak dapat dibatalkan.",
     "deleteUsers": "Hapus Pengguna",
     "deleteUsersDescription": "Apakah Anda yakin ingin menghapus {{count}} pengguna? Tindakan ini tidak dapat dibatalkan."
+  },
+  "tasks": {
+    "title": "Tugas",
+    "description": "Berikut daftar tugas untuk proyek ini.",
+    "searchPlaceholder": "Filter berdasarkan judul...",
+    "editTask": "Ubah Tugas",
+    "deleteTask": "Hapus Tugas",
+    "columns": {
+      "id": "Tugas",
+      "title": "Judul",
+      "status": "Status",
+      "priority": "Prioritas",
+      "actions": "Aksi"
+    },
+    "status": {
+      "backlog": "Backlog",
+      "todo": "Akan Dikerjakan",
+      "in-progress": "Sedang Dikerjakan",
+      "done": "Selesai",
+      "canceled": "Dibatalkan"
+    },
+    "label": {
+      "bug": "Bug",
+      "feature": "Fitur",
+      "documentation": "Dokumentasi"
+    },
+    "priority": {
+      "low": "Rendah",
+      "medium": "Sedang",
+      "high": "Tinggi"
+    },
+    "actions": {
+      "edit": "Ubah",
+      "delete": "Hapus"
+    }
   }
 }
