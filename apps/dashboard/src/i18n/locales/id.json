@@ -444,6 +444,7 @@
     "searchPlaceholder": "Cari percakapan...",
     "noResults": "Tidak ada percakapan ditemukan.",
     "today": "Hari ini",
-    "yesterday": "Kemarin"
+    "yesterday": "Kemarin",
+    "back": "Kembali"
   }
 }

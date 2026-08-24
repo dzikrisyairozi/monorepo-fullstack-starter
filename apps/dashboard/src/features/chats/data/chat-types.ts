@@ -18,6 +18,7 @@ export type ChatTask = {
 
 export type ChatMessageSegment =
   | { type: 'text'; text: string }
+  | { type: 'loader' }
   | {
       type: 'thinking';
       steps: ThinkingStep[];

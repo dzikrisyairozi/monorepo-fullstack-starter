@@ -444,6 +444,7 @@
     "searchPlaceholder": "Search conversations...",
     "noResults": "No conversations found.",
     "today": "Today",
-    "yesterday": "Yesterday"
+    "yesterday": "Yesterday",
+    "back": "Back"
   }
 }
