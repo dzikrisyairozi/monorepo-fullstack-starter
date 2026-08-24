@@ -1,4 +1,7 @@
 {
+  "showSubmittedData": {
+    "title": "Anda mengirimkan nilai berikut:"
+  },
   "helpCenter": {
     "title": "Pusat Bantuan segera hadir",
     "description": "Kami sedang membangun dokumentasi, panduan, dan sumber daya dukungan. Periksa kembali nanti."

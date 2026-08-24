@@ -24,3 +24,10 @@ if (typeof window !== 'undefined' && !window.matchMedia) {
     dispatchEvent: () => false,
   });
 }
+
+// jsdom does not implement scrollTo either - TanStack Router's scroll
+// restoration calls it on every navigation, logging a "not implemented"
+// error to stderr on every router-backed test otherwise.
+if (typeof window !== 'undefined') {
+  window.scrollTo = () => {};
+}
