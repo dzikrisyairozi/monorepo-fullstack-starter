@@ -1,6 +1,27 @@
 {
+  "validation": {
+    "emailRequired": "Email is required.",
+    "emailInvalid": "Enter a valid email address.",
+    "passwordRequired": "Password is required.",
+    "passwordMinLength": "Password must be at least 8 characters.",
+    "passwordsDoNotMatch": "Passwords do not match."
+  },
+  "signIn": {
+    "title": "Sign in",
+    "description": "Enter your email and password to access the dashboard.",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Sign in",
+    "forgotPassword": "Forgot your password?",
+    "noAccount": "Don't have an account?",
+    "createAccount": "Create one"
+  },
   "layout": {
     "skipToMain": "Skip to main content"
+  },
+  "passwordInput": {
+    "show": "Show password",
+    "hide": "Hide password"
   },
   "confirmDialog": {
     "confirm": "Confirm",

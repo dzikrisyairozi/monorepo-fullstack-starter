@@ -1,6 +1,27 @@
 {
+  "validation": {
+    "emailRequired": "Email wajib diisi.",
+    "emailInvalid": "Masukkan alamat email yang valid.",
+    "passwordRequired": "Kata sandi wajib diisi.",
+    "passwordMinLength": "Kata sandi minimal 8 karakter.",
+    "passwordsDoNotMatch": "Kata sandi tidak cocok."
+  },
+  "signIn": {
+    "title": "Masuk",
+    "description": "Masukkan email dan kata sandi Anda untuk mengakses dasbor.",
+    "email": "Email",
+    "password": "Kata Sandi",
+    "submit": "Masuk",
+    "forgotPassword": "Lupa kata sandi?",
+    "noAccount": "Belum punya akun?",
+    "createAccount": "Buat akun"
+  },
   "layout": {
     "skipToMain": "Lewati ke konten utama"
+  },
+  "passwordInput": {
+    "show": "Tampilkan kata sandi",
+    "hide": "Sembunyikan kata sandi"
   },
   "confirmDialog": {
     "confirm": "Konfirmasi",
