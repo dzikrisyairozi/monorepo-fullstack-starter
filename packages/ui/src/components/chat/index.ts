@@ -1,2 +1,8 @@
-// Chat primitives land here in a later phase (see spec/97-dashboard-shadcn-admin-parity).
-export {};
+export { AgentLoader } from './agent-loader';
+export { SourceChip, SourceChipGroup, type ChatSource } from './source-chip';
+export {
+  ToolChip,
+  type ToolInvocation,
+  type ToolInvocationStatus,
+} from './tool-chip';
+export { TaskRow, type TaskStatus } from './task-row';
