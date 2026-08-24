@@ -34,5 +34,45 @@
   },
   "footer": {
     "builtBy": "Dibuat oleh"
+  },
+  "nav": {
+    "teams": {
+      "starter": "Dashboard Starter",
+      "starterPlan": "Vite + Shadcn UI",
+      "acme": "Acme Inc.",
+      "acmePlan": "Enterprise",
+      "globex": "Globex Corp",
+      "globexPlan": "Startup"
+    },
+    "groups": {
+      "general": "Umum",
+      "pages": "Halaman",
+      "other": "Lainnya"
+    },
+    "dashboard": "Dasbor",
+    "tasks": "Tugas",
+    "apps": "Aplikasi",
+    "chats": "Obrolan",
+    "users": "Pengguna",
+    "sandbox": "Sandbox",
+    "auth": "Autentikasi",
+    "authSignIn": "Masuk",
+    "authSignIn2": "Masuk (2 Kolom)",
+    "authSignUp": "Daftar",
+    "authForgotPassword": "Lupa Kata Sandi",
+    "authOtp": "OTP",
+    "errors": "Kesalahan",
+    "errorUnauthorized": "Tidak Diotorisasi",
+    "errorForbidden": "Terlarang",
+    "errorNotFound": "Tidak Ditemukan",
+    "errorServer": "Kesalahan Server Internal",
+    "errorMaintenance": "Sedang Pemeliharaan",
+    "settings": "Pengaturan",
+    "settingsProfile": "Profil",
+    "settingsAccount": "Akun",
+    "settingsAppearance": "Tampilan",
+    "settingsNotifications": "Notifikasi",
+    "settingsDisplay": "Layar",
+    "helpCenter": "Pusat Bantuan"
   }
 }

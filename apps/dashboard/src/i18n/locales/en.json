@@ -34,5 +34,45 @@
   },
   "footer": {
     "builtBy": "Built by"
+  },
+  "nav": {
+    "teams": {
+      "starter": "Dashboard Starter",
+      "starterPlan": "Vite + Shadcn UI",
+      "acme": "Acme Inc.",
+      "acmePlan": "Enterprise",
+      "globex": "Globex Corp",
+      "globexPlan": "Startup"
+    },
+    "groups": {
+      "general": "General",
+      "pages": "Pages",
+      "other": "Other"
+    },
+    "dashboard": "Dashboard",
+    "tasks": "Tasks",
+    "apps": "Apps",
+    "chats": "Chats",
+    "users": "Users",
+    "sandbox": "Sandbox",
+    "auth": "Auth",
+    "authSignIn": "Sign In",
+    "authSignIn2": "Sign In (2 Col)",
+    "authSignUp": "Sign Up",
+    "authForgotPassword": "Forgot Password",
+    "authOtp": "OTP",
+    "errors": "Errors",
+    "errorUnauthorized": "Unauthorized",
+    "errorForbidden": "Forbidden",
+    "errorNotFound": "Not Found",
+    "errorServer": "Internal Server Error",
+    "errorMaintenance": "Maintenance Error",
+    "settings": "Settings",
+    "settingsProfile": "Profile",
+    "settingsAccount": "Account",
+    "settingsAppearance": "Appearance",
+    "settingsNotifications": "Notifications",
+    "settingsDisplay": "Display",
+    "helpCenter": "Help Center"
   }
 }
