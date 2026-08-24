@@ -205,5 +205,47 @@
     "settingsDisplay": "Display",
     "helpCenter": "Help Center",
     "signOut": "Sign out"
+  },
+  "dataTable": {
+    "sortAsc": "Asc",
+    "sortDesc": "Desc",
+    "clearSort": "Clear sort",
+    "hideColumn": "Hide column",
+    "view": "View",
+    "toggleColumns": "Toggle columns",
+    "rowsPerPage": "Rows per page",
+    "pageOfPages": "Page {{page}} of {{pageCount}}",
+    "firstPage": "Go to first page",
+    "previousPage": "Go to previous page",
+    "nextPage": "Go to next page",
+    "lastPage": "Go to last page",
+    "selectedCount": "{{selected}} of {{total}} row(s) selected.",
+    "noResults": "No results."
+  },
+  "users": {
+    "title": "Users",
+    "description": "Manage users and their roles here.",
+    "columns": {
+      "username": "Username",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "status": "Status",
+      "role": "Role",
+      "createdAt": "Created At",
+      "actions": "Actions"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive",
+      "invited": "Invited",
+      "suspended": "Suspended"
+    },
+    "role": {
+      "superadmin": "Super Admin",
+      "admin": "Admin",
+      "manager": "Manager",
+      "cashier": "Cashier"
+    }
   }
 }

@@ -205,5 +205,47 @@
     "settingsDisplay": "Layar",
     "helpCenter": "Pusat Bantuan",
     "signOut": "Keluar"
+  },
+  "dataTable": {
+    "sortAsc": "Naik",
+    "sortDesc": "Turun",
+    "clearSort": "Hapus urutan",
+    "hideColumn": "Sembunyikan kolom",
+    "view": "Tampilan",
+    "toggleColumns": "Alihkan kolom",
+    "rowsPerPage": "Baris per halaman",
+    "pageOfPages": "Halaman {{page}} dari {{pageCount}}",
+    "firstPage": "Ke halaman pertama",
+    "previousPage": "Ke halaman sebelumnya",
+    "nextPage": "Ke halaman berikutnya",
+    "lastPage": "Ke halaman terakhir",
+    "selectedCount": "{{selected}} dari {{total}} baris dipilih.",
+    "noResults": "Tidak ada hasil."
+  },
+  "users": {
+    "title": "Pengguna",
+    "description": "Kelola pengguna dan peran mereka di sini.",
+    "columns": {
+      "username": "Nama Pengguna",
+      "name": "Nama",
+      "email": "Email",
+      "phone": "Telepon",
+      "status": "Status",
+      "role": "Peran",
+      "createdAt": "Dibuat Pada",
+      "actions": "Aksi"
+    },
+    "status": {
+      "active": "Aktif",
+      "inactive": "Tidak Aktif",
+      "invited": "Diundang",
+      "suspended": "Ditangguhkan"
+    },
+    "role": {
+      "superadmin": "Super Admin",
+      "admin": "Admin",
+      "manager": "Manajer",
+      "cashier": "Kasir"
+    }
   }
 }
