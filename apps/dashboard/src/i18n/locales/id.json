@@ -49,7 +49,10 @@
     "usernameMinLength": "Nama pengguna minimal 2 karakter.",
     "bioMaxLength": "Bio maksimal 160 karakter.",
     "urlRequired": "URL wajib diisi.",
-    "urlInvalid": "Masukkan URL yang valid."
+    "urlInvalid": "Masukkan URL yang valid.",
+    "nameMinLength": "Nama minimal 2 karakter.",
+    "dobRequired": "Tanggal lahir wajib diisi.",
+    "languageRequired": "Pilih bahasa."
   },
   "signIn": {
     "title": "Masuk",
@@ -382,6 +385,19 @@
       "addUrl": "Tambah URL",
       "removeUrl": "Hapus URL",
       "update": "Perbarui profil"
+    },
+    "account": {
+      "title": "Akun",
+      "description": "Perbarui pengaturan akun Anda. Atur bahasa dan tanggal lahir pilihan Anda.",
+      "name": "Nama",
+      "dob": "Tanggal lahir",
+      "dobPlaceholder": "Pilih tanggal",
+      "language": "Bahasa",
+      "update": "Perbarui akun"
+    },
+    "appearance": {
+      "title": "Tampilan",
+      "description": "Sesuaikan tampilan aplikasi. Beralih otomatis antara tema siang dan malam."
     }
   }
 }

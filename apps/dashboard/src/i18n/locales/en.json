@@ -49,7 +49,10 @@
     "usernameMinLength": "Username must be at least 2 characters.",
     "bioMaxLength": "Bio must be 160 characters or fewer.",
     "urlRequired": "URL is required.",
-    "urlInvalid": "Enter a valid URL."
+    "urlInvalid": "Enter a valid URL.",
+    "nameMinLength": "Name must be at least 2 characters.",
+    "dobRequired": "A date of birth is required.",
+    "languageRequired": "Select a language."
   },
   "signIn": {
     "title": "Sign in",
@@ -382,6 +385,19 @@
       "addUrl": "Add URL",
       "removeUrl": "Remove URL",
       "update": "Update profile"
+    },
+    "account": {
+      "title": "Account",
+      "description": "Update your account settings. Set your preferred language and date of birth.",
+      "name": "Name",
+      "dob": "Date of birth",
+      "dobPlaceholder": "Pick a date",
+      "language": "Language",
+      "update": "Update account"
+    },
+    "appearance": {
+      "title": "Appearance",
+      "description": "Customize the appearance of the app. Automatically switch between day and night themes."
     }
   }
 }
