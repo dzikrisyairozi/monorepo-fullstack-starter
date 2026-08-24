@@ -11,6 +11,10 @@
       "types": "./src/components/*.tsx",
       "import": "./src/components/*.tsx"
     },
+    "./components/chat": {
+      "types": "./src/components/chat/index.ts",
+      "import": "./src/components/chat/index.ts"
+    },
     "./hooks/*": {
       "types": "./src/hooks/*.ts",
       "import": "./src/hooks/*.ts"
