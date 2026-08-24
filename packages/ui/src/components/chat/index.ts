@@ -6,3 +6,9 @@ export {
   type ToolInvocationStatus,
 } from './tool-chip';
 export { TaskRow, type TaskStatus } from './task-row';
+export {
+  ThinkingTrace,
+  type ThinkingStep,
+  type ThinkingSearchResult,
+} from './thinking-trace';
+export { StreamingText } from './streaming-text';
