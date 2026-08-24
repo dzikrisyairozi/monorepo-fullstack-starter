@@ -2,7 +2,7 @@ import { createContext, useContext, useState, type ReactNode } from 'react';
 import { useDialogState } from '../../../hooks/use-dialog-state';
 import { type Task } from '../data/schema';
 
-export type TasksDialogType = 'create' | 'edit' | 'delete';
+export type TasksDialogType = 'create' | 'edit' | 'delete' | 'import';
 
 type TasksContextValue = {
   open: TasksDialogType | null;

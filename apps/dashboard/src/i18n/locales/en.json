@@ -320,6 +320,23 @@
     "editTaskDescription": "Update the task's details here. Click save when you are done.",
     "deleteTaskDescription": "Are you sure you want to delete {{id}}? This action cannot be undone.",
     "deleteTasks": "Delete Tasks",
-    "deleteTasksDescription": "Are you sure you want to delete {{count}} task(s)? This action cannot be undone."
+    "deleteTasksDescription": "Are you sure you want to delete {{count}} task(s)? This action cannot be undone.",
+    "import": {
+      "title": "Import Tasks",
+      "description": "Import tasks from a CSV file. Columns required: title, status, label, priority.",
+      "filePrompt": "CSV file",
+      "wrongExtension": "Please upload a .csv file.",
+      "confirm": "Import {{count}} task(s)",
+      "errors": {
+        "empty": "The file is empty.",
+        "missingColumns": "Missing required column(s): {{columns}}.",
+        "noDataRows": "The file has no data rows.",
+        "columnCountMismatch": "Row {{row}}: expected {{expected}} columns, found {{found}}.",
+        "titleRequired": "Row {{row}}: title is required.",
+        "invalidStatus": "Row {{row}}: \"{{value}}\" is not a valid status.",
+        "invalidLabel": "Row {{row}}: \"{{value}}\" is not a valid label.",
+        "invalidPriority": "Row {{row}}: \"{{value}}\" is not a valid priority."
+      }
+    }
   }
 }

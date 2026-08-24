@@ -1,4 +1,5 @@
 import { TasksDeleteDialog } from './tasks-delete-dialog';
+import { TasksImportDialog } from './tasks-import-dialog';
 import { TasksMutateDrawer } from './tasks-mutate-drawer';
 import { useTasks } from './tasks-provider';
 
@@ -12,6 +13,11 @@ export function TasksDialogs() {
         open={open === 'create'}
         onOpenChange={(next) => setOpen(next ? 'create' : null)}
         currentRow={null}
+      />
+      <TasksImportDialog
+        key="task-import"
+        open={open === 'import'}
+        onOpenChange={(next) => setOpen(next ? 'import' : null)}
       />
       {currentRow && (
         <>

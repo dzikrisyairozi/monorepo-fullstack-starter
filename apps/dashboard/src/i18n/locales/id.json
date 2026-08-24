@@ -320,6 +320,23 @@
     "editTaskDescription": "Perbarui detail tugas di sini. Klik simpan jika sudah selesai.",
     "deleteTaskDescription": "Apakah Anda yakin ingin menghapus {{id}}? Tindakan ini tidak dapat dibatalkan.",
     "deleteTasks": "Hapus Tugas",
-    "deleteTasksDescription": "Apakah Anda yakin ingin menghapus {{count}} tugas? Tindakan ini tidak dapat dibatalkan."
+    "deleteTasksDescription": "Apakah Anda yakin ingin menghapus {{count}} tugas? Tindakan ini tidak dapat dibatalkan.",
+    "import": {
+      "title": "Impor Tugas",
+      "description": "Impor tugas dari berkas CSV. Kolom yang wajib: title, status, label, priority.",
+      "filePrompt": "Berkas CSV",
+      "wrongExtension": "Silakan unggah berkas .csv.",
+      "confirm": "Impor {{count}} tugas",
+      "errors": {
+        "empty": "Berkas kosong.",
+        "missingColumns": "Kolom wajib tidak ada: {{columns}}.",
+        "noDataRows": "Berkas tidak memiliki baris data.",
+        "columnCountMismatch": "Baris {{row}}: diharapkan {{expected}} kolom, ditemukan {{found}}.",
+        "titleRequired": "Baris {{row}}: judul wajib diisi.",
+        "invalidStatus": "Baris {{row}}: \"{{value}}\" bukan status yang valid.",
+        "invalidLabel": "Baris {{row}}: \"{{value}}\" bukan label yang valid.",
+        "invalidPriority": "Baris {{row}}: \"{{value}}\" bukan prioritas yang valid."
+      }
+    }
   }
 }
