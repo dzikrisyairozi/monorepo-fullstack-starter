@@ -338,5 +338,30 @@
         "invalidPriority": "Baris {{row}}: \"{{value}}\" bukan prioritas yang valid."
       }
     }
+  },
+  "apps": {
+    "title": "Integrasi Aplikasi",
+    "description": "Hubungkan alat yang sudah digunakan tim Anda.",
+    "searchPlaceholder": "Filter aplikasi...",
+    "filterAll": "Semua",
+    "filterConnected": "Terhubung",
+    "sortAsc": "Nama A-Z",
+    "sortDesc": "Nama Z-A",
+    "connect": "Hubungkan",
+    "connected": "Terhubung",
+    "descriptions": {
+      "teamChat": "Pesan real-time dan kanal untuk seluruh tim Anda.",
+      "codeHub": "Hosting dan review kode bersama pelacak isu.",
+      "notekeeper": "Catat catatan dan wiki dalam satu ruang kerja bersama.",
+      "designly": "Desain antarmuka dan prototipe kolaboratif.",
+      "filedrop": "Sinkronkan dan bagikan berkas di setiap perangkat.",
+      "taskboard": "Papan kanban untuk melacak pekerjaan yang berlangsung.",
+      "projecthub": "Rencanakan proyek dan lacak beban kerja tim.",
+      "meetup": "Panggilan video dan berbagi layar untuk tim jarak jauh.",
+      "payflow": "Terima pembayaran dan kelola langganan.",
+      "mailblast": "Kirim buletin dan kampanye pemasaran.",
+      "communitycord": "Obrolan suara dan teks untuk komunitas Anda.",
+      "clouddocs": "Simpan dan sunting dokumen bersama di cloud."
+    }
   }
 }

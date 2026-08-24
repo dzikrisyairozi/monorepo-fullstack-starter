@@ -338,5 +338,30 @@
         "invalidPriority": "Row {{row}}: \"{{value}}\" is not a valid priority."
       }
     }
+  },
+  "apps": {
+    "title": "App Integrations",
+    "description": "Connect the tools your team already uses.",
+    "searchPlaceholder": "Filter apps...",
+    "filterAll": "All",
+    "filterConnected": "Connected",
+    "sortAsc": "Name A-Z",
+    "sortDesc": "Name Z-A",
+    "connect": "Connect",
+    "connected": "Connected",
+    "descriptions": {
+      "teamChat": "Real-time messaging and channels for your whole team.",
+      "codeHub": "Host and review code alongside your issue tracker.",
+      "notekeeper": "Capture notes and wikis in one shared workspace.",
+      "designly": "Collaborative interface design and prototyping.",
+      "filedrop": "Sync and share files across every device.",
+      "taskboard": "Kanban boards for tracking work in progress.",
+      "projecthub": "Plan projects and track team workload.",
+      "meetup": "Video calls and screen sharing for remote teams.",
+      "payflow": "Accept payments and manage subscriptions.",
+      "mailblast": "Send newsletters and marketing campaigns.",
+      "communitycord": "Voice and text chat for your community.",
+      "clouddocs": "Store and co-edit documents in the cloud."
+    }
   }
 }
