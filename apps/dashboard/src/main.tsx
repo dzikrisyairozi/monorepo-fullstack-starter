@@ -17,6 +17,7 @@ import { FontProvider } from './context/font-provider';
 import { LayoutProvider } from './context/layout-provider';
 import { SearchProvider } from './context/search-provider';
 import { I18nProvider } from '@repo/i18n';
+import { Toaster } from '@repo/ui/components/ui/sonner';
 import './index.css';
 
 // Import dashboard i18n resources
@@ -55,6 +56,7 @@ createRoot(document.getElementById('root')!).render(
             <LayoutProvider>
               <SearchProvider>
                 <RouterProvider router={router} />
+                <Toaster />
               </SearchProvider>
             </LayoutProvider>
           </FontProvider>

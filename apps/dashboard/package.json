@@ -28,6 +28,7 @@
     "react-dom": "^19.2.8",
     "react-hook-form": "^7.85.0",
     "recharts": "3.10.1",
+    "sonner": "^2.0.8",
     "zod": "^4.4.3",
     "zustand": "^5.0.15"
   },

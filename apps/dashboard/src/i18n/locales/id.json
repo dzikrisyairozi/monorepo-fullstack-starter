@@ -1,4 +1,30 @@
 {
+  "errors": {
+    "goBack": "Kembali",
+    "backToHome": "Kembali ke beranda",
+    "sessionExpired": "Sesi Anda telah berakhir. Silakan masuk kembali.",
+    "genericFallback": "Terjadi kesalahan. Silakan coba lagi.",
+    "unauthorized": {
+      "title": "Tidak diotorisasi",
+      "description": "Anda perlu masuk untuk mengakses halaman ini."
+    },
+    "forbidden": {
+      "title": "Akses terlarang",
+      "description": "Anda tidak memiliki izin untuk mengakses sumber daya ini."
+    },
+    "notFound": {
+      "title": "Halaman tidak ditemukan",
+      "description": "Halaman yang Anda cari tidak ada atau telah dipindahkan."
+    },
+    "general": {
+      "title": "Terjadi kesalahan",
+      "description": "Terjadi kesalahan tak terduga. Silakan coba lagi nanti."
+    },
+    "maintenance": {
+      "title": "Sedang pemeliharaan",
+      "description": "Layanan ini sementara tidak tersedia. Silakan periksa kembali nanti."
+    }
+  },
   "validation": {
     "nameRequired": "Nama wajib diisi.",
     "emailRequired": "Email wajib diisi.",

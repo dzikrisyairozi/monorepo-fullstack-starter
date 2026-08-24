@@ -1,4 +1,30 @@
 {
+  "errors": {
+    "goBack": "Go back",
+    "backToHome": "Back to home",
+    "sessionExpired": "Your session has expired. Please sign in again.",
+    "genericFallback": "Something went wrong. Please try again.",
+    "unauthorized": {
+      "title": "Unauthorized",
+      "description": "You need to sign in to access this page."
+    },
+    "forbidden": {
+      "title": "Access forbidden",
+      "description": "You don't have permission to access this resource."
+    },
+    "notFound": {
+      "title": "Page not found",
+      "description": "The page you're looking for doesn't exist or has been moved."
+    },
+    "general": {
+      "title": "Something went wrong",
+      "description": "An unexpected error occurred. Please try again later."
+    },
+    "maintenance": {
+      "title": "Under maintenance",
+      "description": "This service is temporarily unavailable. Please check back soon."
+    }
+  },
   "validation": {
     "nameRequired": "Name is required.",
     "emailRequired": "Email is required.",
