@@ -1,4 +1,7 @@
 {
+  "layout": {
+    "skipToMain": "Lewati ke konten utama"
+  },
   "sidebar": {
     "title": "Dashboard Starter",
     "overview": "Ringkasan",

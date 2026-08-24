@@ -1,4 +1,7 @@
 {
+  "layout": {
+    "skipToMain": "Skip to main content"
+  },
   "sidebar": {
     "title": "Dashboard Starter",
     "overview": "Overview",
