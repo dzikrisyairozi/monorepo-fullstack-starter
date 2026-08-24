@@ -7,6 +7,10 @@
     "dev": "vite --port 5174",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
+    "lint:check": "eslint . --max-warnings 0",
+    "type-check": "tsc -b --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "preview": "vite preview"
   },
   "dependencies": {
