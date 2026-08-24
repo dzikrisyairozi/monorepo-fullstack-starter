@@ -227,7 +227,9 @@
     "noResults": "Tidak ada hasil.",
     "selectedCountShort": "{{count}} dipilih",
     "clearFilter": "Hapus filter",
-    "resetFilters": "Atur ulang"
+    "resetFilters": "Atur ulang",
+    "rowsSelected": "{{count}} dipilih",
+    "clearSelection": "Hapus pilihan"
   },
   "users": {
     "title": "Pengguna",
@@ -267,6 +269,10 @@
     "inviteUser": "Undang Pengguna",
     "inviteUserDescription": "Undang pengguna baru melalui email. Mereka akan menerima undangan untuk bergabung.",
     "inviteMessage": "Pesan (opsional)",
-    "inviteMessagePlaceholder": "Tambahkan catatan pribadi ke email undangan..."
+    "inviteMessagePlaceholder": "Tambahkan catatan pribadi ke email undangan...",
+    "deleteUser": "Hapus Pengguna",
+    "deleteUserDescription": "Apakah Anda yakin ingin menghapus {{username}}? Tindakan ini tidak dapat dibatalkan.",
+    "deleteUsers": "Hapus Pengguna",
+    "deleteUsersDescription": "Apakah Anda yakin ingin menghapus {{count}} pengguna? Tindakan ini tidak dapat dibatalkan."
   }
 }

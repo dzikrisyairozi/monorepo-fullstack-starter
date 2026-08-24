@@ -227,7 +227,9 @@
     "noResults": "No results.",
     "selectedCountShort": "{{count}} selected",
     "clearFilter": "Clear filter",
-    "resetFilters": "Reset"
+    "resetFilters": "Reset",
+    "rowsSelected": "{{count}} selected",
+    "clearSelection": "Clear selection"
   },
   "users": {
     "title": "Users",
@@ -267,6 +269,10 @@
     "inviteUser": "Invite User",
     "inviteUserDescription": "Invite a new user by email. They will receive an invitation to join.",
     "inviteMessage": "Message (optional)",
-    "inviteMessagePlaceholder": "Add a personal note to the invite email..."
+    "inviteMessagePlaceholder": "Add a personal note to the invite email...",
+    "deleteUser": "Delete User",
+    "deleteUserDescription": "Are you sure you want to delete {{username}}? This action cannot be undone.",
+    "deleteUsers": "Delete Users",
+    "deleteUsersDescription": "Are you sure you want to delete {{count}} user(s)? This action cannot be undone."
   }
 }
