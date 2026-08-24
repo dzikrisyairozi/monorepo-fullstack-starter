@@ -80,12 +80,10 @@ impl UserService {
 
         if let Some(email) = payload.email {
             // Check email uniqueness if changing.
-            if email != user.email {
-                if self.user_repo.find_by_email(&email).await?.is_some() {
-                    return Err(DomainError::Conflict {
-                        message: format!("A user with email '{}' already exists", email),
-                    });
-                }
+            if email != user.email && self.user_repo.find_by_email(&email).await?.is_some() {
+                return Err(DomainError::Conflict {
+                    message: format!("A user with email '{}' already exists", email),
+                });
             }
             user.email = email;
         }

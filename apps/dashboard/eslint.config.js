@@ -20,4 +20,14 @@ export default defineConfig([
       globals: globals.browser,
     },
   },
+  {
+    // TanStack Router file-based routes export a Route config, not the
+    // page component itself - the component is passed into `component:`
+    // instead. react-refresh's only-export-components heuristics have no
+    // way to model that convention, so it's off for route files.
+    files: ['src/routes/**/*.{ts,tsx}'],
+    rules: {
+      'react-refresh/only-export-components': 'off',
+    },
+  },
 ]);
