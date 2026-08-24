@@ -52,7 +52,8 @@
     "urlInvalid": "Enter a valid URL.",
     "nameMinLength": "Name must be at least 2 characters.",
     "dobRequired": "A date of birth is required.",
-    "languageRequired": "Select a language."
+    "languageRequired": "Select a language.",
+    "sectionsRequired": "Select at least one section."
   },
   "signIn": {
     "title": "Sign in",
@@ -398,6 +399,32 @@
     "appearance": {
       "title": "Appearance",
       "description": "Customize the appearance of the app. Automatically switch between day and night themes."
+    },
+    "notifications": {
+      "title": "Notifications",
+      "description": "Configure how you receive notifications.",
+      "type": "Notify me about...",
+      "types": {
+        "all": "All new messages",
+        "mentions": "Direct messages and mentions",
+        "none": "Nothing"
+      },
+      "communicationEmails": "Communication emails",
+      "communicationEmailsDescription": "Receive emails about your account activity.",
+      "marketingEmails": "Marketing emails",
+      "marketingEmailsDescription": "Receive emails about new products, features, and more.",
+      "socialEmails": "Social emails",
+      "socialEmailsDescription": "Receive emails for friend requests, follows, and more.",
+      "securityEmails": "Security emails",
+      "securityEmailsDescription": "Receive emails about your account security. Cannot be disabled.",
+      "update": "Update notifications"
+    },
+    "display": {
+      "title": "Display",
+      "description": "Turn items on or off to control what is displayed in the sidebar.",
+      "sections": "Sidebar sections",
+      "sectionsDescription": "Select the sections you want to see in the sidebar.",
+      "update": "Update display"
     }
   }
 }

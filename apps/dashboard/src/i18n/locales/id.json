@@ -52,7 +52,8 @@
     "urlInvalid": "Masukkan URL yang valid.",
     "nameMinLength": "Nama minimal 2 karakter.",
     "dobRequired": "Tanggal lahir wajib diisi.",
-    "languageRequired": "Pilih bahasa."
+    "languageRequired": "Pilih bahasa.",
+    "sectionsRequired": "Pilih setidaknya satu bagian."
   },
   "signIn": {
     "title": "Masuk",
@@ -398,6 +399,32 @@
     "appearance": {
       "title": "Tampilan",
       "description": "Sesuaikan tampilan aplikasi. Beralih otomatis antara tema siang dan malam."
+    },
+    "notifications": {
+      "title": "Notifikasi",
+      "description": "Atur bagaimana Anda menerima notifikasi.",
+      "type": "Beri tahu saya tentang...",
+      "types": {
+        "all": "Semua pesan baru",
+        "mentions": "Pesan langsung dan sebutan",
+        "none": "Tidak ada"
+      },
+      "communicationEmails": "Email komunikasi",
+      "communicationEmailsDescription": "Terima email tentang aktivitas akun Anda.",
+      "marketingEmails": "Email pemasaran",
+      "marketingEmailsDescription": "Terima email tentang produk, fitur baru, dan lainnya.",
+      "socialEmails": "Email sosial",
+      "socialEmailsDescription": "Terima email untuk permintaan pertemanan, pengikut, dan lainnya.",
+      "securityEmails": "Email keamanan",
+      "securityEmailsDescription": "Terima email tentang keamanan akun Anda. Tidak dapat dinonaktifkan.",
+      "update": "Perbarui notifikasi"
+    },
+    "display": {
+      "title": "Tampilan",
+      "description": "Aktifkan atau nonaktifkan item untuk mengontrol apa yang ditampilkan di sidebar.",
+      "sections": "Bagian sidebar",
+      "sectionsDescription": "Pilih bagian yang ingin Anda lihat di sidebar.",
+      "update": "Perbarui tampilan"
     }
   }
 }
