@@ -23,6 +23,7 @@ import { Route as errors503RouteImport } from './routes/(errors)/503'
 import { Route as AuthenticatedIndexRouteImport } from './routes/_authenticated/index'
 import { Route as AuthenticatedSandboxRouteImport } from './routes/_authenticated/sandbox'
 import { Route as AuthenticatedErrorsErrorRouteImport } from './routes/_authenticated/errors/$error'
+import { Route as AuthenticatedHelpCenterIndexRouteImport } from './routes/_authenticated/help-center/index'
 
 const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
   id: '/_authenticated',
@@ -94,6 +95,12 @@ const AuthenticatedErrorsErrorRoute =
     path: '/errors/$error',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
+const AuthenticatedHelpCenterIndexRoute =
+  AuthenticatedHelpCenterIndexRouteImport.update({
+    id: '/help-center/',
+    path: '/help-center/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof AuthenticatedIndexRoute
@@ -109,6 +116,7 @@ export interface FileRoutesByFullPath {
   '/503': typeof errors503Route
   '/sandbox': typeof AuthenticatedSandboxRoute
   '/errors/$error': typeof AuthenticatedErrorsErrorRoute
+  '/help-center/': typeof AuthenticatedHelpCenterIndexRoute
 }
 export interface FileRoutesByTo {
   '/forgot-password': typeof authForgotPasswordRoute
@@ -124,6 +132,7 @@ export interface FileRoutesByTo {
   '/sandbox': typeof AuthenticatedSandboxRoute
   '/': typeof AuthenticatedIndexRoute
   '/errors/$error': typeof AuthenticatedErrorsErrorRoute
+  '/help-center': typeof AuthenticatedHelpCenterIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -141,6 +150,7 @@ export interface FileRoutesById {
   '/_authenticated/sandbox': typeof AuthenticatedSandboxRoute
   '/_authenticated/': typeof AuthenticatedIndexRoute
   '/_authenticated/errors/$error': typeof AuthenticatedErrorsErrorRoute
+  '/_authenticated/help-center/': typeof AuthenticatedHelpCenterIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -158,6 +168,7 @@ export interface FileRouteTypes {
     | '/503'
     | '/sandbox'
     | '/errors/$error'
+    | '/help-center/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/forgot-password'
@@ -173,6 +184,7 @@ export interface FileRouteTypes {
     | '/sandbox'
     | '/'
     | '/errors/$error'
+    | '/help-center'
   id:
     | '__root__'
     | '/_authenticated'
@@ -189,6 +201,7 @@ export interface FileRouteTypes {
     | '/_authenticated/sandbox'
     | '/_authenticated/'
     | '/_authenticated/errors/$error'
+    | '/_authenticated/help-center/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -305,6 +318,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedErrorsErrorRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/_authenticated/help-center/': {
+      id: '/_authenticated/help-center/'
+      path: '/help-center'
+      fullPath: '/help-center/'
+      preLoaderRoute: typeof AuthenticatedHelpCenterIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
   }
 }
 
@@ -312,12 +332,14 @@ interface AuthenticatedRouteRouteChildren {
   AuthenticatedSandboxRoute: typeof AuthenticatedSandboxRoute
   AuthenticatedIndexRoute: typeof AuthenticatedIndexRoute
   AuthenticatedErrorsErrorRoute: typeof AuthenticatedErrorsErrorRoute
+  AuthenticatedHelpCenterIndexRoute: typeof AuthenticatedHelpCenterIndexRoute
 }
 
 const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
   AuthenticatedSandboxRoute: AuthenticatedSandboxRoute,
   AuthenticatedIndexRoute: AuthenticatedIndexRoute,
   AuthenticatedErrorsErrorRoute: AuthenticatedErrorsErrorRoute,
+  AuthenticatedHelpCenterIndexRoute: AuthenticatedHelpCenterIndexRoute,
 }
 
 const AuthenticatedRouteRouteWithChildren =

@@ -1,4 +1,8 @@
 {
+  "helpCenter": {
+    "title": "Help Center coming soon",
+    "description": "We're building out documentation, guides, and support resources. Check back soon."
+  },
   "errors": {
     "goBack": "Go back",
     "backToHome": "Back to home",

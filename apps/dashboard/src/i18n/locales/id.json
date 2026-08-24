@@ -1,4 +1,8 @@
 {
+  "helpCenter": {
+    "title": "Pusat Bantuan segera hadir",
+    "description": "Kami sedang membangun dokumentasi, panduan, dan sumber daya dukungan. Periksa kembali nanti."
+  },
   "errors": {
     "goBack": "Kembali",
     "backToHome": "Kembali ke beranda",
