@@ -125,7 +125,10 @@ export function ProfileForm() {
                   </FormDescription>
                   <div className="flex items-center gap-2">
                     <FormControl>
-                      <Input {...urlField} placeholder="https://example.com" />
+                      <Input
+                        {...urlField}
+                        placeholder={t('settings.profile.urlPlaceholder')}
+                      />
                     </FormControl>
                     <Button
                       type="button"

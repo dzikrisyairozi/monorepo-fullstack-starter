@@ -59,6 +59,7 @@
     "title": "Masuk",
     "description": "Masukkan email dan kata sandi Anda untuk mengakses dasbor.",
     "email": "Email",
+    "emailPlaceholder": "nama@contoh.com",
     "password": "Kata Sandi",
     "submit": "Masuk",
     "forgotPassword": "Lupa kata sandi?",
@@ -78,6 +79,7 @@
     "title": "Buat akun",
     "description": "Masukkan detail Anda di bawah untuk membuat akun.",
     "name": "Nama",
+    "namePlaceholder": "Jane Doe",
     "confirmPassword": "Konfirmasi Kata Sandi",
     "submit": "Buat akun",
     "haveAccount": "Sudah punya akun?",
@@ -253,7 +255,9 @@
     "clearFilter": "Hapus filter",
     "resetFilters": "Atur ulang",
     "rowsSelected": "{{count}} dipilih",
-    "clearSelection": "Hapus pilihan"
+    "clearSelection": "Hapus pilihan",
+    "selectAll": "Pilih semua",
+    "selectRow": "Pilih baris"
   },
   "users": {
     "title": "Pengguna",
@@ -396,6 +400,7 @@
       "bioDescription": "Anda dapat @mention pengguna atau organisasi lain.",
       "urls": "URL",
       "urlsDescription": "Tambahkan tautan ke situs web, blog, atau profil media sosial Anda.",
+      "urlPlaceholder": "https://contoh.com",
       "addUrl": "Tambah URL",
       "removeUrl": "Hapus URL",
       "update": "Perbarui profil"

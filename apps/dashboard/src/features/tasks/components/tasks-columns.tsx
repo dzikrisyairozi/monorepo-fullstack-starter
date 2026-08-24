@@ -21,7 +21,7 @@ export function useTasksColumns(): ColumnDef<Task>[] {
             (table.getIsSomePageRowsSelected() && 'indeterminate')
           }
           onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-          aria-label="Select all"
+          aria-label={t('dataTable.selectAll')}
           className="translate-y-[2px]"
         />
       ),
@@ -29,7 +29,7 @@ export function useTasksColumns(): ColumnDef<Task>[] {
         <Checkbox
           checked={row.getIsSelected()}
           onCheckedChange={(value) => row.toggleSelected(!!value)}
-          aria-label="Select row"
+          aria-label={t('dataTable.selectRow')}
           className="translate-y-[2px]"
         />
       ),

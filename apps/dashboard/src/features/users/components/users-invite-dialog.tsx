@@ -85,7 +85,10 @@ export function UsersInviteDialog({
                 <FormItem>
                   <FormLabel>{t('users.columns.email')}</FormLabel>
                   <FormControl>
-                    <Input placeholder="name@example.com" {...field} />
+                    <Input
+                      placeholder={t('signIn.emailPlaceholder')}
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

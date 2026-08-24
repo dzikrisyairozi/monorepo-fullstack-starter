@@ -59,6 +59,7 @@
     "title": "Sign in",
     "description": "Enter your email and password to access the dashboard.",
     "email": "Email",
+    "emailPlaceholder": "name@example.com",
     "password": "Password",
     "submit": "Sign in",
     "forgotPassword": "Forgot your password?",
@@ -78,6 +79,7 @@
     "title": "Create an account",
     "description": "Enter your details below to create your account.",
     "name": "Name",
+    "namePlaceholder": "Jane Doe",
     "confirmPassword": "Confirm Password",
     "submit": "Create account",
     "haveAccount": "Already have an account?",
@@ -253,7 +255,9 @@
     "clearFilter": "Clear filter",
     "resetFilters": "Reset",
     "rowsSelected": "{{count}} selected",
-    "clearSelection": "Clear selection"
+    "clearSelection": "Clear selection",
+    "selectAll": "Select all",
+    "selectRow": "Select row"
   },
   "users": {
     "title": "Users",
@@ -396,6 +400,7 @@
       "bioDescription": "You can @mention other users and organizations.",
       "urls": "URLs",
       "urlsDescription": "Add links to your website, blog, or social media profiles.",
+      "urlPlaceholder": "https://example.com",
       "addUrl": "Add URL",
       "removeUrl": "Remove URL",
       "update": "Update profile"

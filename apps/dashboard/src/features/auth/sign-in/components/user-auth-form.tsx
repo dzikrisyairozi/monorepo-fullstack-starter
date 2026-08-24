@@ -66,7 +66,7 @@ export function UserAuthForm({ redirectTo }: { redirectTo?: string }) {
             <FormItem>
               <FormLabel>{t('signIn.email')}</FormLabel>
               <FormControl>
-                <Input placeholder="name@example.com" {...field} />
+                <Input placeholder={t('signIn.emailPlaceholder')} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

@@ -71,7 +71,7 @@ export function SignUpForm() {
             <FormItem>
               <FormLabel>{t('signUp.name')}</FormLabel>
               <FormControl>
-                <Input placeholder="Jane Doe" {...field} />
+                <Input placeholder={t('signUp.namePlaceholder')} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -84,7 +84,7 @@ export function SignUpForm() {
             <FormItem>
               <FormLabel>{t('signIn.email')}</FormLabel>
               <FormControl>
-                <Input placeholder="name@example.com" {...field} />
+                <Input placeholder={t('signIn.emailPlaceholder')} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
