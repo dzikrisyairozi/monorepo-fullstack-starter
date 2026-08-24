@@ -182,7 +182,9 @@ function SandboxPage() {
     <>
       <Header>
         <Search />
-        <LanguageSwitcher />
+        <div className="hidden lg:block">
+          <LanguageSwitcher />
+        </div>
         <ThemeSwitch />
         <ConfigDrawer />
         <ProfileDropdown />
