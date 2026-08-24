@@ -45,7 +45,11 @@
     "statusRequired": "Select a status.",
     "titleRequired": "Title is required.",
     "labelRequired": "Select a label.",
-    "priorityRequired": "Select a priority."
+    "priorityRequired": "Select a priority.",
+    "usernameMinLength": "Username must be at least 2 characters.",
+    "bioMaxLength": "Bio must be 160 characters or fewer.",
+    "urlRequired": "URL is required.",
+    "urlInvalid": "Enter a valid URL."
   },
   "signIn": {
     "title": "Sign in",
@@ -362,6 +366,22 @@
       "mailblast": "Send newsletters and marketing campaigns.",
       "communitycord": "Voice and text chat for your community.",
       "clouddocs": "Store and co-edit documents in the cloud."
+    }
+  },
+  "settings": {
+    "description": "Manage your account settings and set e-mail preferences.",
+    "profile": {
+      "title": "Profile",
+      "description": "This is how others will see you on the site.",
+      "username": "Username",
+      "email": "Email",
+      "bio": "Bio",
+      "bioDescription": "You can @mention other users and organizations.",
+      "urls": "URLs",
+      "urlsDescription": "Add links to your website, blog, or social media profiles.",
+      "addUrl": "Add URL",
+      "removeUrl": "Remove URL",
+      "update": "Update profile"
     }
   }
 }

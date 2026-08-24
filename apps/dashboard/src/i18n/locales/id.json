@@ -45,7 +45,11 @@
     "statusRequired": "Pilih status.",
     "titleRequired": "Judul wajib diisi.",
     "labelRequired": "Pilih label.",
-    "priorityRequired": "Pilih prioritas."
+    "priorityRequired": "Pilih prioritas.",
+    "usernameMinLength": "Nama pengguna minimal 2 karakter.",
+    "bioMaxLength": "Bio maksimal 160 karakter.",
+    "urlRequired": "URL wajib diisi.",
+    "urlInvalid": "Masukkan URL yang valid."
   },
   "signIn": {
     "title": "Masuk",
@@ -362,6 +366,22 @@
       "mailblast": "Kirim buletin dan kampanye pemasaran.",
       "communitycord": "Obrolan suara dan teks untuk komunitas Anda.",
       "clouddocs": "Simpan dan sunting dokumen bersama di cloud."
+    }
+  },
+  "settings": {
+    "description": "Kelola pengaturan akun Anda dan atur preferensi email.",
+    "profile": {
+      "title": "Profil",
+      "description": "Beginilah cara orang lain melihat Anda di situs ini.",
+      "username": "Nama Pengguna",
+      "email": "Email",
+      "bio": "Bio",
+      "bioDescription": "Anda dapat @mention pengguna atau organisasi lain.",
+      "urls": "URL",
+      "urlsDescription": "Tambahkan tautan ke situs web, blog, atau profil media sosial Anda.",
+      "addUrl": "Tambah URL",
+      "removeUrl": "Hapus URL",
+      "update": "Perbarui profil"
     }
   }
 }
