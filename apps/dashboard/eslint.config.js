@@ -19,6 +19,14 @@ export default defineConfig([
       ecmaVersion: 2020,
       globals: globals.browser,
     },
+    rules: {
+      // Convention across this codebase: prefix an intentionally-unused
+      // parameter with _ (e.g. a callback signature you don't fully use).
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
+      ],
+    },
   },
   {
     // TanStack Router file-based routes export a Route config, not the

@@ -17,6 +17,15 @@
     "noAccount": "Belum punya akun?",
     "createAccount": "Buat akun"
   },
+  "otp": {
+    "title": "Verifikasi identitas Anda",
+    "description": "Masukkan kode 6 digit yang kami kirimkan.",
+    "autoSubmitHint": "Ini akan otomatis terkirim setelah lengkap."
+  },
+  "signIn2": {
+    "quote": "Starter ini merilis dashboard alat internal kami dalam seminggu, bukan satu kuartal.",
+    "quoteAuthor": "Tim Rekayasa"
+  },
   "signUp": {
     "title": "Buat akun",
     "description": "Masukkan detail Anda di bawah untuk membuat akun.",

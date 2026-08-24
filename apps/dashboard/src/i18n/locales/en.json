@@ -17,6 +17,15 @@
     "noAccount": "Don't have an account?",
     "createAccount": "Create one"
   },
+  "otp": {
+    "title": "Verify your identity",
+    "description": "Enter the 6-digit code we sent you.",
+    "autoSubmitHint": "This will submit automatically once complete."
+  },
+  "signIn2": {
+    "quote": "This starter shipped our internal tools dashboard in a week instead of a quarter.",
+    "quoteAuthor": "Engineering Team"
+  },
   "signUp": {
     "title": "Create an account",
     "description": "Enter your details below to create your account.",
