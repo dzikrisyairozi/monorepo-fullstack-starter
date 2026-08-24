@@ -12,3 +12,6 @@ export {
   type ThinkingSearchResult,
 } from './thinking-trace';
 export { StreamingText } from './streaming-text';
+export { PromptBar, type PromptBarItem } from './prompt-bar';
+export { MessageBubble } from './message-bubble';
+export { ApprovalCard, type ApprovalOption } from './approval-card';
