@@ -38,7 +38,11 @@
     "emailInvalid": "Masukkan alamat email yang valid.",
     "passwordRequired": "Kata sandi wajib diisi.",
     "passwordMinLength": "Kata sandi minimal 8 karakter.",
-    "passwordsDoNotMatch": "Kata sandi tidak cocok."
+    "passwordsDoNotMatch": "Kata sandi tidak cocok.",
+    "usernameRequired": "Nama pengguna wajib diisi.",
+    "phoneRequired": "Nomor telepon wajib diisi.",
+    "roleRequired": "Pilih peran.",
+    "statusRequired": "Pilih status."
   },
   "signIn": {
     "title": "Masuk",
@@ -250,6 +254,19 @@
       "manager": "Manajer",
       "cashier": "Kasir"
     },
-    "searchPlaceholder": "Filter berdasarkan nama pengguna atau email..."
+    "searchPlaceholder": "Filter berdasarkan nama pengguna atau email...",
+    "actions": {
+      "edit": "Ubah",
+      "delete": "Hapus"
+    },
+    "addUser": "Tambah Pengguna",
+    "editUser": "Ubah Pengguna",
+    "addUserDescription": "Buat pengguna baru di sini. Klik simpan jika sudah selesai.",
+    "editUserDescription": "Perbarui detail pengguna di sini. Klik simpan jika sudah selesai.",
+    "saveChanges": "Simpan perubahan",
+    "inviteUser": "Undang Pengguna",
+    "inviteUserDescription": "Undang pengguna baru melalui email. Mereka akan menerima undangan untuk bergabung.",
+    "inviteMessage": "Pesan (opsional)",
+    "inviteMessagePlaceholder": "Tambahkan catatan pribadi ke email undangan..."
   }
 }

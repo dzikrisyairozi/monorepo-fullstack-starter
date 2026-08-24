@@ -5,6 +5,7 @@ import { Checkbox } from '@repo/ui/components/ui/checkbox';
 import { cn } from '@repo/ui/lib/utils';
 import { DataTableColumnHeader } from '../../../components/data-table';
 import { LongText } from '../../../components/long-text';
+import { DataTableRowActions } from './data-table-row-actions';
 import { type User, type UserStatus } from '../data/schema';
 
 const statusClassName: Record<UserStatus, string> = {
@@ -129,6 +130,12 @@ export function useUsersColumns(): ColumnDef<User>[] {
         />
       ),
       cell: ({ row }) => new Date(row.original.createdAt).toLocaleDateString(),
+    },
+    {
+      id: 'actions',
+      cell: ({ row }) => <DataTableRowActions row={row} />,
+      enableSorting: false,
+      enableHiding: false,
     },
   ];
 }

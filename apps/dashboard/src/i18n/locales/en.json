@@ -38,7 +38,11 @@
     "emailInvalid": "Enter a valid email address.",
     "passwordRequired": "Password is required.",
     "passwordMinLength": "Password must be at least 8 characters.",
-    "passwordsDoNotMatch": "Passwords do not match."
+    "passwordsDoNotMatch": "Passwords do not match.",
+    "usernameRequired": "Username is required.",
+    "phoneRequired": "Phone number is required.",
+    "roleRequired": "Select a role.",
+    "statusRequired": "Select a status."
   },
   "signIn": {
     "title": "Sign in",
@@ -250,6 +254,19 @@
       "manager": "Manager",
       "cashier": "Cashier"
     },
-    "searchPlaceholder": "Filter by username or email..."
+    "searchPlaceholder": "Filter by username or email...",
+    "actions": {
+      "edit": "Edit",
+      "delete": "Delete"
+    },
+    "addUser": "Add User",
+    "editUser": "Edit User",
+    "addUserDescription": "Create a new user here. Click save when you are done.",
+    "editUserDescription": "Update the user's details here. Click save when you are done.",
+    "saveChanges": "Save changes",
+    "inviteUser": "Invite User",
+    "inviteUserDescription": "Invite a new user by email. They will receive an invitation to join.",
+    "inviteMessage": "Message (optional)",
+    "inviteMessagePlaceholder": "Add a personal note to the invite email..."
   }
 }
