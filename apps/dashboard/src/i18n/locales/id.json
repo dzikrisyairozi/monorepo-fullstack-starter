@@ -439,5 +439,11 @@
       "sectionsDescription": "Pilih bagian yang ingin Anda lihat di sidebar.",
       "update": "Perbarui tampilan"
     }
+  },
+  "chats": {
+    "searchPlaceholder": "Cari percakapan...",
+    "noResults": "Tidak ada percakapan ditemukan.",
+    "today": "Hari ini",
+    "yesterday": "Kemarin"
   }
 }

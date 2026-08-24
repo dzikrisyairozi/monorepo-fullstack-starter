@@ -439,5 +439,11 @@
       "sectionsDescription": "Select the sections you want to see in the sidebar.",
       "update": "Update display"
     }
+  },
+  "chats": {
+    "searchPlaceholder": "Search conversations...",
+    "noResults": "No conversations found.",
+    "today": "Today",
+    "yesterday": "Yesterday"
   }
 }
