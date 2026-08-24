@@ -14,27 +14,28 @@ import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
 import { ThemeToggle } from '@/components/theme-toggle';
 
 export const i18nUI = defineI18nUI(i18n, {
-  translations: {
-    en: {
-      displayName: 'English',
-    },
-    id: {
-      displayName: 'Bahasa Indonesia',
-      search: 'Cari dokumentasi',
-      searchNoResult: 'Tidak ada hasil',
-      toc: 'Daftar Isi',
-      lastUpdate: 'Terakhir diperbarui',
-      chooseTheme: 'Pilih Tema',
-      nextPage: 'Halaman Selanjutnya',
-      previousPage: 'Halaman Sebelumnya',
-      editOnGithub: 'Edit di GitHub',
-    },
+  en: {
+    displayName: 'English',
+  },
+  id: {
+    displayName: 'Bahasa Indonesia',
+    search: 'Cari dokumentasi',
+    searchNoResult: 'Tidak ada hasil',
+    toc: 'Daftar Isi',
+    lastUpdate: 'Terakhir diperbarui',
+    chooseTheme: 'Pilih Tema',
+    nextPage: 'Halaman Selanjutnya',
+    previousPage: 'Halaman Sebelumnya',
+    editOnGithub: 'Edit di GitHub',
   },
 });
 
 export function baseOptions(locale: string): BaseLayoutProps {
   return {
-    i18n,
+    // i18n is deprecated on BaseLayoutProps as of fumadocs-ui 16 - the raw
+    // I18nConfig object carries a non-serializable translations() method that
+    // breaks passing it to these client layouts. RootProvider's i18nUI.provider()
+    // already supplies the language switch; omit it here per the deprecation note.
     themeSwitch: {
       component: <ThemeToggle />,
     },
