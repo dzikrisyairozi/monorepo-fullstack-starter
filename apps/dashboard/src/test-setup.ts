@@ -1,5 +1,10 @@
 import { afterEach } from 'vitest';
 import { cleanup } from '@testing-library/react';
+import { initDashboardI18n } from './i18n';
+
+// Real translations, not the raw keys - any test asserting on rendered
+// button/label text needs the actual strings, same as production.
+initDashboardI18n();
 
 afterEach(() => {
   cleanup();

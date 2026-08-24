@@ -136,6 +136,7 @@ import { Header } from '../../components/layout/header';
 import { Main } from '../../components/layout/main';
 import { ThemeSwitch } from '../../components/theme-switch';
 import { ConfigDrawer } from '../../components/config-drawer';
+import { ProfileDropdown } from '../../components/profile-dropdown';
 import { Search } from '../../components/search';
 
 export const Route = createFileRoute('/_authenticated/sandbox')({
@@ -184,6 +185,7 @@ function SandboxPage() {
         <LanguageSwitcher />
         <ThemeSwitch />
         <ConfigDrawer />
+        <ProfileDropdown />
       </Header>
       <Main>
         <div className="space-y-12">

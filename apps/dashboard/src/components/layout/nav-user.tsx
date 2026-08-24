@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link, type LinkProps } from '@tanstack/react-router';
 import { ChevronsUpDown, LogOut, Settings } from 'lucide-react';
 import { useTranslation } from '@repo/i18n';
@@ -22,23 +23,17 @@ import {
   useSidebar,
 } from '@repo/ui/components/ui/sidebar';
 import { type NavUser as NavUserData } from './types';
+import { SignOutDialog } from '../sign-out-dialog';
+import { getInitials } from '../../lib/utils';
 
 // Settings routes land in a later phase - typed loosely so this
 // compiles against the current route tree in the meantime.
 const SETTINGS_URL: LinkProps['to'] | (string & {}) = '/settings';
 
-function initials(name: string) {
-  return name
-    .split(' ')
-    .map((part) => part[0])
-    .slice(0, 2)
-    .join('')
-    .toUpperCase();
-}
-
 export function NavUser({ user }: { user: NavUserData }) {
   const { t } = useTranslation('dashboard');
   const { isMobile } = useSidebar();
+  const [signOutOpen, setSignOutOpen] = useState(false);
 
   return (
     <SidebarMenu>
@@ -52,7 +47,7 @@ export function NavUser({ user }: { user: NavUserData }) {
               <Avatar className="size-8 rounded-lg">
                 <AvatarImage src={user.avatar} alt={user.name} />
                 <AvatarFallback className="rounded-lg">
-                  {initials(user.name)}
+                  {getInitials(user.name)}
                 </AvatarFallback>
               </Avatar>
               <div className="grid flex-1 text-left text-sm leading-tight">
@@ -75,7 +70,7 @@ export function NavUser({ user }: { user: NavUserData }) {
                 <Avatar className="size-8 rounded-lg">
                   <AvatarImage src={user.avatar} alt={user.name} />
                   <AvatarFallback className="rounded-lg">
-                    {initials(user.name)}
+                    {getInitials(user.name)}
                   </AvatarFallback>
                 </Avatar>
                 <div className="grid flex-1 text-left text-sm leading-tight">
@@ -96,13 +91,17 @@ export function NavUser({ user }: { user: NavUserData }) {
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuItem variant="destructive">
+            <DropdownMenuItem
+              variant="destructive"
+              onClick={() => setSignOutOpen(true)}
+            >
               <LogOut />
               {t('nav.signOut')}
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </SidebarMenuItem>
+      <SignOutDialog open={signOutOpen} onOpenChange={setSignOutOpen} />
     </SidebarMenu>
   );
 }

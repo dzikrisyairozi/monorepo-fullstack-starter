@@ -2,6 +2,22 @@
   "layout": {
     "skipToMain": "Skip to main content"
   },
+  "confirmDialog": {
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "typeToConfirm": "Type {{value}} to confirm."
+  },
+  "profileDropdown": {
+    "myAccount": "My Account",
+    "profile": "Profile",
+    "settings": "Settings",
+    "signOut": "Sign out"
+  },
+  "signOutDialog": {
+    "title": "Sign out?",
+    "description": "You'll need to sign in again to access the dashboard.",
+    "confirm": "Sign out"
+  },
   "configDrawer": {
     "title": "Configuration",
     "description": "Live playground for sidebar layout, theme, and font.",

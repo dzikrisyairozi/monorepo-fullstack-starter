@@ -2,6 +2,22 @@
   "layout": {
     "skipToMain": "Lewati ke konten utama"
   },
+  "confirmDialog": {
+    "confirm": "Konfirmasi",
+    "cancel": "Batal",
+    "typeToConfirm": "Ketik {{value}} untuk konfirmasi."
+  },
+  "profileDropdown": {
+    "myAccount": "Akun Saya",
+    "profile": "Profil",
+    "settings": "Pengaturan",
+    "signOut": "Keluar"
+  },
+  "signOutDialog": {
+    "title": "Keluar?",
+    "description": "Anda perlu masuk kembali untuk mengakses dasbor.",
+    "confirm": "Keluar"
+  },
   "configDrawer": {
     "title": "Konfigurasi",
     "description": "Playground langsung untuk tata letak sidebar, tema, dan font.",
