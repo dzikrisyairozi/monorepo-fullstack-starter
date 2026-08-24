@@ -220,7 +220,10 @@
     "nextPage": "Go to next page",
     "lastPage": "Go to last page",
     "selectedCount": "{{selected}} of {{total}} row(s) selected.",
-    "noResults": "No results."
+    "noResults": "No results.",
+    "selectedCountShort": "{{count}} selected",
+    "clearFilter": "Clear filter",
+    "resetFilters": "Reset"
   },
   "users": {
     "title": "Users",
@@ -246,6 +249,7 @@
       "admin": "Admin",
       "manager": "Manager",
       "cashier": "Cashier"
-    }
+    },
+    "searchPlaceholder": "Filter by username or email..."
   }
 }

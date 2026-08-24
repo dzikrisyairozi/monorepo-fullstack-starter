@@ -220,7 +220,10 @@
     "nextPage": "Ke halaman berikutnya",
     "lastPage": "Ke halaman terakhir",
     "selectedCount": "{{selected}} dari {{total}} baris dipilih.",
-    "noResults": "Tidak ada hasil."
+    "noResults": "Tidak ada hasil.",
+    "selectedCountShort": "{{count}} dipilih",
+    "clearFilter": "Hapus filter",
+    "resetFilters": "Atur ulang"
   },
   "users": {
     "title": "Pengguna",
@@ -246,6 +249,7 @@
       "admin": "Admin",
       "manager": "Manajer",
       "cashier": "Kasir"
-    }
+    },
+    "searchPlaceholder": "Filter berdasarkan nama pengguna atau email..."
   }
 }

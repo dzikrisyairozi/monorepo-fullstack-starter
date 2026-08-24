@@ -1,4 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
+import { z } from 'zod';
 import { useTranslation } from '@repo/i18n';
 import { Header } from '../../../components/layout/header';
 import { Main } from '../../../components/layout/main';
@@ -9,7 +10,16 @@ import { Search } from '../../../components/search';
 import { UsersTable } from '../../../features/users/components/users-table';
 import { users } from '../../../features/users/data/users';
 
+const usersSearchSchema = z.object({
+  page: z.number().optional(),
+  pageSize: z.number().optional(),
+  sortBy: z.string().optional(),
+  sortDir: z.enum(['asc', 'desc']).optional(),
+  filters: z.record(z.string(), z.string()).optional(),
+});
+
 export const Route = createFileRoute('/_authenticated/users/')({
+  validateSearch: usersSearchSchema,
   component: UsersPage,
 });
 
