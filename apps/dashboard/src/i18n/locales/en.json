@@ -42,7 +42,10 @@
     "usernameRequired": "Username is required.",
     "phoneRequired": "Phone number is required.",
     "roleRequired": "Select a role.",
-    "statusRequired": "Select a status."
+    "statusRequired": "Select a status.",
+    "titleRequired": "Title is required.",
+    "labelRequired": "Select a label.",
+    "priorityRequired": "Select a priority."
   },
   "signIn": {
     "title": "Sign in",
@@ -298,7 +301,8 @@
     "label": {
       "bug": "Bug",
       "feature": "Feature",
-      "documentation": "Documentation"
+      "documentation": "Documentation",
+      "label": "Label"
     },
     "priority": {
       "low": "Low",
@@ -307,7 +311,15 @@
     },
     "actions": {
       "edit": "Edit",
-      "delete": "Delete"
-    }
+      "delete": "Delete",
+      "copyId": "Copy Task ID",
+      "labels": "Labels"
+    },
+    "createTask": "New Task",
+    "createTaskDescription": "Add a new task here. Click save when you are done.",
+    "editTaskDescription": "Update the task's details here. Click save when you are done.",
+    "deleteTaskDescription": "Are you sure you want to delete {{id}}? This action cannot be undone.",
+    "deleteTasks": "Delete Tasks",
+    "deleteTasksDescription": "Are you sure you want to delete {{count}} task(s)? This action cannot be undone."
   }
 }

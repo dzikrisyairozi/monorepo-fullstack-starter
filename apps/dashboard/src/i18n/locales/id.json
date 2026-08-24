@@ -42,7 +42,10 @@
     "usernameRequired": "Nama pengguna wajib diisi.",
     "phoneRequired": "Nomor telepon wajib diisi.",
     "roleRequired": "Pilih peran.",
-    "statusRequired": "Pilih status."
+    "statusRequired": "Pilih status.",
+    "titleRequired": "Judul wajib diisi.",
+    "labelRequired": "Pilih label.",
+    "priorityRequired": "Pilih prioritas."
   },
   "signIn": {
     "title": "Masuk",
@@ -298,7 +301,8 @@
     "label": {
       "bug": "Bug",
       "feature": "Fitur",
-      "documentation": "Dokumentasi"
+      "documentation": "Dokumentasi",
+      "label": "Label"
     },
     "priority": {
       "low": "Rendah",
@@ -307,7 +311,15 @@
     },
     "actions": {
       "edit": "Ubah",
-      "delete": "Hapus"
-    }
+      "delete": "Hapus",
+      "copyId": "Salin ID Tugas",
+      "labels": "Label"
+    },
+    "createTask": "Tugas Baru",
+    "createTaskDescription": "Tambah tugas baru di sini. Klik simpan jika sudah selesai.",
+    "editTaskDescription": "Perbarui detail tugas di sini. Klik simpan jika sudah selesai.",
+    "deleteTaskDescription": "Apakah Anda yakin ingin menghapus {{id}}? Tindakan ini tidak dapat dibatalkan.",
+    "deleteTasks": "Hapus Tugas",
+    "deleteTasksDescription": "Apakah Anda yakin ingin menghapus {{count}} tugas? Tindakan ini tidak dapat dibatalkan."
   }
 }

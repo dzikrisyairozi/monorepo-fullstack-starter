@@ -31,7 +31,9 @@ import {
 import { useTableUrlState } from '../../../hooks/use-table-url-state';
 import { taskPriorityOptions, taskStatusOptions } from '../data/data';
 import { type Task } from '../data/schema';
+import { DataTableBulkActions } from './data-table-bulk-actions';
 import { useTasksColumns } from './tasks-columns';
+import { TasksMultiDeleteDialog } from './tasks-multi-delete-dialog';
 
 function resolveUpdater<T>(updater: Updater<T>, previous: T): T {
   return typeof updater === 'function'
@@ -46,6 +48,7 @@ export function TasksTable({ data }: { data: Task[] }) {
 
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
   const [rowSelection, setRowSelection] = useState<RowSelectionState>({});
+  const [showMultiDelete, setShowMultiDelete] = useState(false);
 
   const sorting: SortingState = urlState.sorting ? [urlState.sorting] : [];
   const pagination: PaginationState = {
@@ -152,6 +155,10 @@ export function TasksTable({ data }: { data: Task[] }) {
           },
         ]}
       />
+      <DataTableBulkActions
+        table={table}
+        onDelete={() => setShowMultiDelete(true)}
+      />
       <div className="overflow-hidden rounded-md border">
         <Table>
           <TableHeader>
@@ -201,6 +208,14 @@ export function TasksTable({ data }: { data: Task[] }) {
         </Table>
       </div>
       <DataTablePagination table={table} />
+      <TasksMultiDeleteDialog
+        open={showMultiDelete}
+        onOpenChange={setShowMultiDelete}
+        rows={table
+          .getFilteredSelectedRowModel()
+          .rows.map((row) => row.original)}
+        onConfirmed={() => table.resetRowSelection()}
+      />
     </div>
   );
 }
