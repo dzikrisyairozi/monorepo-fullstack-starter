@@ -1,20 +1,5 @@
 import { useState } from 'react';
-import {
-  type ColumnFiltersState,
-  type PaginationState,
-  type RowSelectionState,
-  type SortingState,
-  type VisibilityState,
-  flexRender,
-  getCoreRowModel,
-  getFacetedRowModel,
-  getFacetedUniqueValues,
-  getFilteredRowModel,
-  getPaginationRowModel,
-  getSortedRowModel,
-  useReactTable,
-  type Updater,
-} from '@tanstack/react-table';
+import { flexRender } from '@tanstack/react-table';
 import { useTranslation } from '@repo/i18n';
 import {
   Table,
@@ -25,109 +10,32 @@ import {
   TableRow,
 } from '@repo/ui/components/ui/table';
 import {
+  DataTableBulkActions,
   DataTablePagination,
   DataTableToolbar,
+  useDataTableState,
 } from '../../../components/data-table';
-import { useTableUrlState } from '../../../hooks/use-table-url-state';
 import { taskPriorityOptions, taskStatusOptions } from '../data/data';
 import { type Task } from '../data/schema';
-import { DataTableBulkActions } from './data-table-bulk-actions';
 import { useTasksColumns } from './tasks-columns';
 import { TasksMultiDeleteDialog } from './tasks-multi-delete-dialog';
 
-function resolveUpdater<T>(updater: Updater<T>, previous: T): T {
-  return typeof updater === 'function'
-    ? (updater as (old: T) => T)(previous)
-    : updater;
-}
+const FILTER_KEYS = ['status', 'priority'] as const;
 
 export function TasksTable({ data }: { data: Task[] }) {
   const { t } = useTranslation('dashboard');
   const columns = useTasksColumns();
-  const urlState = useTableUrlState();
-
-  const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
-  const [rowSelection, setRowSelection] = useState<RowSelectionState>({});
   const [showMultiDelete, setShowMultiDelete] = useState(false);
 
-  const sorting: SortingState = urlState.sorting ? [urlState.sorting] : [];
-  const pagination: PaginationState = {
-    pageIndex: urlState.page - 1,
-    pageSize: urlState.pageSize,
-  };
-  const statusValues = urlState.filters.status
-    ? urlState.filters.status.split(',')
-    : [];
-  const priorityValues = urlState.filters.priority
-    ? urlState.filters.priority.split(',')
-    : [];
-  const columnFilters: ColumnFiltersState = [
-    ...(statusValues.length ? [{ id: 'status', value: statusValues }] : []),
-    ...(priorityValues.length
-      ? [{ id: 'priority', value: priorityValues }]
-      : []),
-  ];
-  const searchValue = urlState.filters.search ?? '';
-
-  // TanStack Table's useReactTable() returns functions that aren't
-  // referentially stable across renders, which the React Compiler can't
-  // safely memoize - a known incompatibility with the library itself,
-  // not a bug here.
-  // eslint-disable-next-line react-hooks/incompatible-library
-  const table = useReactTable({
+  const { table, urlState, searchValue } = useDataTableState({
     data,
     columns,
-    state: {
-      sorting,
-      columnFilters,
-      columnVisibility,
-      rowSelection,
-      pagination,
-      globalFilter: searchValue,
-    },
-    onSortingChange: (updater) => {
-      const next = resolveUpdater(updater, sorting);
-      urlState.setSorting(next[0] ?? null);
-    },
-    onColumnFiltersChange: (updater) => {
-      const next = resolveUpdater(updater, columnFilters);
-      const nextStatus = next.find((f) => f.id === 'status')?.value as
-        string[] | undefined;
-      const nextPriority = next.find((f) => f.id === 'priority')?.value as
-        string[] | undefined;
-      urlState.setFilter(
-        'status',
-        nextStatus?.length ? nextStatus.join(',') : undefined,
-      );
-      urlState.setFilter(
-        'priority',
-        nextPriority?.length ? nextPriority.join(',') : undefined,
-      );
-    },
-    onColumnVisibilityChange: setColumnVisibility,
-    onRowSelectionChange: setRowSelection,
-    onPaginationChange: (updater) => {
-      const next = resolveUpdater(updater, pagination);
-      if (next.pageSize !== pagination.pageSize) {
-        urlState.setPageSize(next.pageSize);
-      } else if (next.pageIndex !== pagination.pageIndex) {
-        urlState.setPage(next.pageIndex + 1);
-      }
-    },
-    onGlobalFilterChange: (value: string) => {
-      urlState.setFilter('search', value || undefined);
-    },
+    filterKeys: FILTER_KEYS,
     globalFilterFn: (row, _columnId, filterValue: string) => {
       const search = filterValue.toLowerCase();
-      const task = row.original as Task;
+      const task = row.original;
       return task.title.toLowerCase().includes(search);
     },
-    getCoreRowModel: getCoreRowModel(),
-    getFilteredRowModel: getFilteredRowModel(),
-    getPaginationRowModel: getPaginationRowModel(),
-    getSortedRowModel: getSortedRowModel(),
-    getFacetedRowModel: getFacetedRowModel(),
-    getFacetedUniqueValues: getFacetedUniqueValues(),
   });
 
   return (
@@ -163,6 +71,7 @@ export function TasksTable({ data }: { data: Task[] }) {
       <DataTableBulkActions
         table={table}
         onDelete={() => setShowMultiDelete(true)}
+        deleteLabel={t('tasks.actions.delete')}
       />
       <div className="overflow-hidden rounded-md border">
         <Table>

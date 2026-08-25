@@ -16,6 +16,7 @@ import { Button } from '@repo/ui/components/ui/button';
 import { type ChatMessage, type Conversation } from '../data/chat-types';
 import { useChatReplay } from './use-chat-replay';
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function dateSeparatorLabel(
   date: Date,
   t: (key: string) => string,

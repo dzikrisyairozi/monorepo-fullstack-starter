@@ -1,18 +1,17 @@
 import { type Table } from '@tanstack/react-table';
 import { Trash2 } from 'lucide-react';
-import { useTranslation } from '@repo/i18n';
 import { Button } from '@repo/ui/components/ui/button';
-import { BulkActions } from '../../../components/data-table';
-import { type User } from '../data/schema';
+import { BulkActions } from './bulk-actions';
 
-export function DataTableBulkActions({
+export function DataTableBulkActions<TData>({
   table,
   onDelete,
+  deleteLabel,
 }: {
-  table: Table<User>;
+  table: Table<TData>;
   onDelete: () => void;
+  deleteLabel: string;
 }) {
-  const { t } = useTranslation('dashboard');
   const selectedCount = table.getFilteredSelectedRowModel().rows.length;
 
   return (
@@ -22,7 +21,7 @@ export function DataTableBulkActions({
     >
       <Button variant="destructive" size="sm" onClick={onDelete}>
         <Trash2 />
-        {t('users.actions.delete')}
+        {deleteLabel}
       </Button>
     </BulkActions>
   );

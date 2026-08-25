@@ -17,7 +17,11 @@ const SearchContext = createContext<SearchContextType | null>(null);
 export function SearchProvider({ children }: { children: ReactNode }) {
   const [open, setOpenState] = useState(false);
   const openRef = useRef(open);
-  openRef.current = open;
+  // Ref writes must happen outside render (the React Compiler forbids them
+  // during render), so mirror state into the ref via an effect instead.
+  useEffect(() => {
+    openRef.current = open;
+  });
   const triggerRef = useRef<HTMLElement | null>(null);
 
   // The command dialog has no DialogTrigger (it opens from a header button

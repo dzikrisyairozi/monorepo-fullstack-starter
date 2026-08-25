@@ -1,5 +1,6 @@
 import {
   useCallback,
+  useEffect,
   useRef,
   useState,
   type Dispatch,
@@ -22,7 +23,11 @@ export function useDialogState<T extends string>(
 ): [T | null, Dispatch<SetStateAction<T | null>>] {
   const [open, setOpenState] = useState<T | null>(initialValue);
   const openRef = useRef(open);
-  openRef.current = open;
+  // Ref writes must happen outside render (the React Compiler forbids them
+  // during render), so mirror state into the ref via an effect instead.
+  useEffect(() => {
+    openRef.current = open;
+  });
   const triggerRef = useRef<HTMLElement | null>(null);
 
   // The state updater passed to setOpenState must stay pure (React may
