@@ -21,27 +21,32 @@ export function useDialogState<T extends string>(
   initialValue: T | null = null,
 ): [T | null, Dispatch<SetStateAction<T | null>>] {
   const [open, setOpenState] = useState<T | null>(initialValue);
+  const openRef = useRef(open);
+  openRef.current = open;
   const triggerRef = useRef<HTMLElement | null>(null);
 
+  // The state updater passed to setOpenState must stay pure (React may
+  // invoke it more than once under StrictMode), so the side effects live
+  // here instead, computed against openRef rather than inside the updater.
   const setOpen = useCallback<Dispatch<SetStateAction<T | null>>>((value) => {
-    setOpenState((prev) => {
-      const next =
-        typeof value === 'function'
-          ? (value as (prev: T | null) => T | null)(prev)
-          : value;
+    const prev = openRef.current;
+    const next =
+      typeof value === 'function'
+        ? (value as (prev: T | null) => T | null)(prev)
+        : value;
 
-      if (next !== null && prev === null) {
-        triggerRef.current =
-          document.activeElement instanceof HTMLElement
-            ? document.activeElement
-            : null;
-      } else if (next === null && prev !== null) {
-        const trigger = triggerRef.current;
-        setTimeout(() => trigger?.focus(), 0);
-      }
+    if (next !== null && prev === null) {
+      triggerRef.current =
+        document.activeElement instanceof HTMLElement
+          ? document.activeElement
+          : null;
+    } else if (next === null && prev !== null) {
+      const trigger = triggerRef.current;
+      setTimeout(() => trigger?.focus(), 0);
+    }
 
-      return next;
-    });
+    openRef.current = next;
+    setOpenState(next);
   }, []);
 
   return [open, setOpen];

@@ -16,25 +16,30 @@ const SearchContext = createContext<SearchContextType | null>(null);
 
 export function SearchProvider({ children }: { children: ReactNode }) {
   const [open, setOpenState] = useState(false);
+  const openRef = useRef(open);
+  openRef.current = open;
   const triggerRef = useRef<HTMLElement | null>(null);
 
   // The command dialog has no DialogTrigger (it opens from a header button
   // or a global keyboard shortcut), so Radix has nothing to restore focus
   // to on close and leaves it on <body>. Remember whatever had focus when
   // it opens and refocus it once it closes, after Radix's own handling.
+  // The side effects live here, computed against openRef, rather than
+  // inside the setOpenState updater - that updater must stay pure since
+  // React may invoke it more than once under StrictMode.
   const setOpen = (next: boolean) => {
-    setOpenState((prev) => {
-      if (next && !prev) {
-        triggerRef.current =
-          document.activeElement instanceof HTMLElement
-            ? document.activeElement
-            : null;
-      } else if (!next && prev) {
-        const trigger = triggerRef.current;
-        setTimeout(() => trigger?.focus(), 0);
-      }
-      return next;
-    });
+    const prev = openRef.current;
+    if (next && !prev) {
+      triggerRef.current =
+        document.activeElement instanceof HTMLElement
+          ? document.activeElement
+          : null;
+    } else if (!next && prev) {
+      const trigger = triggerRef.current;
+      setTimeout(() => trigger?.focus(), 0);
+    }
+    openRef.current = next;
+    setOpenState(next);
   };
 
   useEffect(() => {
