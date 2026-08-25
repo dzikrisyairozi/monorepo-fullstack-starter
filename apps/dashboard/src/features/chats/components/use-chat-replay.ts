@@ -7,12 +7,21 @@ import {
   scriptedTools,
 } from '../data/scripted-reply';
 
+// crypto.randomUUID() requires a secure context (https, or localhost) and
+// throws otherwise - e.g. demoing this over plain http:// on a LAN IP. These
+// ids only need to be unique within one browser session (React keys and a
+// lookup key to patch a message's segments in place), not cryptographically
+// unpredictable, so a plain random string is fine.
+function makeMessageId(): string {
+  return Math.random().toString(36).slice(2);
+}
+
 function makeMessage(
   role: ChatMessage['role'],
   segments: ChatMessageSegment[],
 ): ChatMessage {
   return {
-    id: crypto.randomUUID(),
+    id: makeMessageId(),
     role,
     createdAt: new Date().toISOString(),
     segments,
@@ -25,6 +34,11 @@ export function useChatReplay(initialMessages: ChatMessage[]) {
   const timersRef = useRef<ReturnType<typeof setTimeout>[]>([]);
 
   useEffect(() => {
+    // Cancel any in-flight reply's staged reveal timers immediately - left
+    // running, they'd keep firing setAssistantSegments() for an id that no
+    // longer exists in the new conversation's message list.
+    timersRef.current.forEach(clearTimeout);
+    timersRef.current = [];
     // Deferred so this doesn't call setState synchronously as the first
     // statement of the effect body.
     queueMicrotask(() => {
@@ -52,7 +66,7 @@ export function useChatReplay(initialMessages: ChatMessage[]) {
     timersRef.current.forEach(clearTimeout);
     timersRef.current = [];
 
-    const assistantId = crypto.randomUUID();
+    const assistantId = makeMessageId();
     setMessages((prev) => [
       ...prev,
       makeMessage('user', [{ type: 'text', text }]),
