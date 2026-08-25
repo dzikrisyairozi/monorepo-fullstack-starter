@@ -27,6 +27,14 @@ const data: Row[] = [
   { id: '1', name: 'Carol', status: 'active' },
   { id: '2', name: 'Alice', status: 'active' },
   { id: '3', name: 'Bob', status: 'inactive' },
+  // Padding past the default pageSize (10) so there's a real second page to
+  // navigate to - the pagination-revert bug only reproduces with >1 page.
+  // Status 'inactive' so these don't affect the status=active filter test.
+  ...Array.from({ length: 12 }, (_, i) => ({
+    id: `pad-${i}`,
+    name: `Padding ${i}`,
+    status: 'inactive',
+  })),
 ];
 
 function TestPage() {
@@ -45,6 +53,9 @@ function TestPage() {
       <span data-testid="firstRowName">
         {table.getRowModel().rows[0]?.original.name ?? ''}
       </span>
+      <span data-testid="pageIndex">
+        {table.getState().pagination.pageIndex}
+      </span>
       <button onClick={() => urlState.setFilter('search', 'ali')}>
         search ali
       </button>
@@ -54,6 +65,7 @@ function TestPage() {
       <button onClick={() => table.getColumn('name')?.toggleSorting(false)}>
         sort name asc
       </button>
+      <button onClick={() => table.nextPage()}>next page</button>
     </div>
   );
 }
@@ -81,9 +93,9 @@ async function renderTestPage() {
 }
 
 describe('useDataTableState', () => {
-  it('shows all rows with no filters applied', async () => {
+  it('shows one page of rows with no filters applied', async () => {
     await renderTestPage();
-    expect(screen.getByTestId('rowCount').textContent).toBe('3');
+    expect(screen.getByTestId('rowCount').textContent).toBe('10');
   });
 
   it('global search filters rows using the provided globalFilterFn', async () => {
@@ -113,5 +125,15 @@ describe('useDataTableState', () => {
     expect(screen.getByTestId('firstRowName').textContent).toBe('Carol');
     await user.click(screen.getByText('sort name asc'));
     expect(screen.getByTestId('firstRowName').textContent).toBe('Alice');
+  });
+
+  it('advancing to the next page sticks, surviving the re-render it triggers', async () => {
+    const user = userEvent.setup();
+    const router = await renderTestPage();
+
+    await user.click(screen.getByText('next page'));
+
+    expect(screen.getByTestId('pageIndex').textContent).toBe('1');
+    expect(router.state.location.search).toMatchObject({ page: 2 });
   });
 });

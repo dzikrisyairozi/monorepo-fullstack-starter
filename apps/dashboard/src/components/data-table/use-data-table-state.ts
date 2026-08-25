@@ -67,6 +67,15 @@ export function useDataTableState<TData, TValue>({
   const table = useReactTable({
     data,
     columns,
+    // Pagination is fully URL-driven - useTableUrlState already resets page
+    // to 1 on every action that can change the row count (setFilter,
+    // resetFilters, setPageSize). TanStack's own autoResetPageIndex (on by
+    // default) is redundant with that and actively wrong here: globalFilterFn
+    // is a new function reference on every render (it's defined inline by
+    // each table's caller), which invalidates the library's row-model memo
+    // and fires its own reset - including right after a real page change,
+    // reverting page 2 back to page 1 on the very next render.
+    autoResetPageIndex: false,
     state: {
       sorting,
       columnFilters,
