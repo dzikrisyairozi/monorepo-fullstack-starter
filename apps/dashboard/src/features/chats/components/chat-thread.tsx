@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useRef, useState } from 'react';
-import { format, isSameDay, isToday, isYesterday } from 'date-fns';
+import { isSameDay, isToday, isYesterday } from 'date-fns';
 import { ArrowLeft } from 'lucide-react';
 import { useTranslation } from '@repo/i18n';
 import {
@@ -16,10 +16,14 @@ import { Button } from '@repo/ui/components/ui/button';
 import { type ChatMessage, type Conversation } from '../data/chat-types';
 import { useChatReplay } from './use-chat-replay';
 
-function dateSeparatorLabel(date: Date, t: (key: string) => string) {
+export function dateSeparatorLabel(
+  date: Date,
+  t: (key: string) => string,
+  language: string,
+) {
   if (isToday(date)) return t('chats.today');
   if (isYesterday(date)) return t('chats.yesterday');
-  return format(date, 'MMMM d, yyyy');
+  return new Intl.DateTimeFormat(language, { dateStyle: 'long' }).format(date);
 }
 
 function groupByDay(messages: ChatMessage[]) {
@@ -50,7 +54,7 @@ export function ChatThread({
   onBack?: () => void;
   className?: string;
 }) {
-  const { t } = useTranslation('dashboard');
+  const { t, i18n } = useTranslation('dashboard');
   const { messages, send } = useChatReplay(conversation.messages);
   const [promptValue, setPromptValue] = useState('');
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -111,7 +115,7 @@ export function ChatThread({
               <Fragment key={group.date.toISOString()}>
                 <div className="flex items-center justify-center">
                   <span className="rounded-full bg-muted px-2.5 py-1 text-xs text-muted-foreground">
-                    {dateSeparatorLabel(group.date, t)}
+                    {dateSeparatorLabel(group.date, t, i18n.language)}
                   </span>
                 </div>
                 <div className="space-y-4">
