@@ -1,10 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { Header } from '../../../components/layout/header';
+import { AppHeader } from '../../../components/layout/app-header';
 import { Main } from '../../../components/layout/main';
-import { ThemeSwitch } from '../../../components/theme-switch';
-import { ConfigDrawer } from '../../../components/config-drawer';
-import { ProfileDropdown } from '../../../components/profile-dropdown';
-import { Search } from '../../../components/search';
 import { Apps } from '../../../features/apps';
 
 export const Route = createFileRoute('/_authenticated/apps/')({
@@ -14,12 +10,7 @@ export const Route = createFileRoute('/_authenticated/apps/')({
 function AppsPage() {
   return (
     <>
-      <Header>
-        <Search />
-        <ThemeSwitch />
-        <ConfigDrawer />
-        <ProfileDropdown />
-      </Header>
+      <AppHeader />
       <Main>
         <Apps />
       </Main>

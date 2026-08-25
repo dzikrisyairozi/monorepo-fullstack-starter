@@ -1,10 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { Header } from '../../../components/layout/header';
+import { AppHeader } from '../../../components/layout/app-header';
 import { Main } from '../../../components/layout/main';
-import { ThemeSwitch } from '../../../components/theme-switch';
-import { ConfigDrawer } from '../../../components/config-drawer';
-import { ProfileDropdown } from '../../../components/profile-dropdown';
-import { Search } from '../../../components/search';
 import { Chats } from '../../../features/chats';
 
 export const Route = createFileRoute('/_authenticated/chats/')({
@@ -14,12 +10,7 @@ export const Route = createFileRoute('/_authenticated/chats/')({
 function ChatsPage() {
   return (
     <>
-      <Header>
-        <Search />
-        <ThemeSwitch />
-        <ConfigDrawer />
-        <ProfileDropdown />
-      </Header>
+      <AppHeader />
       <Main fixed>
         <Chats />
       </Main>

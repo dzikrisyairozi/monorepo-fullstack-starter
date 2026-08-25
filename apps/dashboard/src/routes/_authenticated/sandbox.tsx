@@ -132,12 +132,8 @@ import {
 } from 'lucide-react';
 
 import { useTranslation, LanguageSwitcher } from '@repo/i18n';
-import { Header } from '../../components/layout/header';
+import { AppHeader } from '../../components/layout/app-header';
 import { Main } from '../../components/layout/main';
-import { ThemeSwitch } from '../../components/theme-switch';
-import { ConfigDrawer } from '../../components/config-drawer';
-import { ProfileDropdown } from '../../components/profile-dropdown';
-import { Search } from '../../components/search';
 
 export const Route = createFileRoute('/_authenticated/sandbox')({
   component: SandboxPage,
@@ -180,15 +176,13 @@ function SandboxPage() {
 
   return (
     <>
-      <Header>
-        <Search />
-        <div className="hidden lg:block">
-          <LanguageSwitcher />
-        </div>
-        <ThemeSwitch />
-        <ConfigDrawer />
-        <ProfileDropdown />
-      </Header>
+      <AppHeader
+        extra={
+          <div className="hidden lg:block">
+            <LanguageSwitcher />
+          </div>
+        }
+      />
       <Main>
         <div className="space-y-12">
           {/* Page header */}

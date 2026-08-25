@@ -1,11 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { useTranslation } from '@repo/i18n';
-import { Header } from '../../../components/layout/header';
+import { AppHeader } from '../../../components/layout/app-header';
 import { Main } from '../../../components/layout/main';
-import { ThemeSwitch } from '../../../components/theme-switch';
-import { ConfigDrawer } from '../../../components/config-drawer';
-import { ProfileDropdown } from '../../../components/profile-dropdown';
-import { Search } from '../../../components/search';
 import { TasksDialogs } from '../../../features/tasks/components/tasks-dialogs';
 import { TasksPrimaryButtons } from '../../../features/tasks/components/tasks-primary-buttons';
 import { TasksProvider } from '../../../features/tasks/components/tasks-provider';
@@ -23,12 +19,7 @@ function TasksPage() {
 
   return (
     <TasksProvider>
-      <Header>
-        <Search />
-        <ThemeSwitch />
-        <ConfigDrawer />
-        <ProfileDropdown />
-      </Header>
+      <AppHeader />
       <Main>
         <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
           <div>

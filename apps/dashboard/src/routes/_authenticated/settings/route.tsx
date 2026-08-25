@@ -1,10 +1,6 @@
 import { createFileRoute, Outlet } from '@tanstack/react-router';
-import { Header } from '../../../components/layout/header';
+import { AppHeader } from '../../../components/layout/app-header';
 import { Main } from '../../../components/layout/main';
-import { ThemeSwitch } from '../../../components/theme-switch';
-import { ConfigDrawer } from '../../../components/config-drawer';
-import { ProfileDropdown } from '../../../components/profile-dropdown';
-import { Search } from '../../../components/search';
 import { SettingsLayout } from '../../../features/settings';
 
 export const Route = createFileRoute('/_authenticated/settings')({
@@ -14,12 +10,7 @@ export const Route = createFileRoute('/_authenticated/settings')({
 function SettingsRoute() {
   return (
     <>
-      <Header>
-        <Search />
-        <ThemeSwitch />
-        <ConfigDrawer />
-        <ProfileDropdown />
-      </Header>
+      <AppHeader />
       <Main>
         <SettingsLayout>
           <Outlet />
