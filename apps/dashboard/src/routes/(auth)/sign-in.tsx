@@ -1,13 +1,9 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { z } from 'zod';
 import { SignIn } from '../../features/auth/sign-in';
-
-const signInSearchSchema = z.object({
-  redirect: z.string().optional(),
-});
+import { redirectSearchSchema } from '../../lib/redirect-search-schema';
 
 export const Route = createFileRoute('/(auth)/sign-in')({
-  validateSearch: signInSearchSchema,
+  validateSearch: redirectSearchSchema,
   component: RouteComponent,
 });
 
