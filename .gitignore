@@ -52,3 +52,4 @@ yarn-error.log*
 # criteria, rationale) worth keeping in history alongside the code it
 # describes, unlike a todo list.
 /tasks/
+/spec/
