@@ -285,7 +285,10 @@ pnpm type-check       # TypeScript type checking
 pnpm format           # Format with Prettier
 pnpm format:check     # Check formatting
 pnpm check-all        # type-check + lint + format:check
-pnpm test             # Run all tests
+pnpm test             # Run tests for every workspace that defines one
+                       # (currently: apps/api, apps/dashboard, packages/ui —
+                       # apps/web and apps/docs have no test script yet, so
+                       # turbo silently skips them rather than failing)
 pnpm clean            # Clean build artifacts
 ```
 

@@ -1,4 +1,149 @@
 {
+  "showSubmittedData": {
+    "title": "You submitted the following values:"
+  },
+  "helpCenter": {
+    "title": "Help Center coming soon",
+    "description": "We're building out documentation, guides, and support resources. Check back soon."
+  },
+  "errors": {
+    "goBack": "Go back",
+    "backToHome": "Back to home",
+    "sessionExpired": "Your session has expired. Please sign in again.",
+    "genericFallback": "Something went wrong. Please try again.",
+    "unauthorized": {
+      "title": "Unauthorized",
+      "description": "You need to sign in to access this page."
+    },
+    "forbidden": {
+      "title": "Access forbidden",
+      "description": "You don't have permission to access this resource."
+    },
+    "notFound": {
+      "title": "Page not found",
+      "description": "The page you're looking for doesn't exist or has been moved."
+    },
+    "general": {
+      "title": "Something went wrong",
+      "description": "An unexpected error occurred. Please try again later."
+    },
+    "maintenance": {
+      "title": "Under maintenance",
+      "description": "This service is temporarily unavailable. Please check back soon."
+    }
+  },
+  "validation": {
+    "nameRequired": "Name is required.",
+    "emailRequired": "Email is required.",
+    "emailInvalid": "Enter a valid email address.",
+    "passwordRequired": "Password is required.",
+    "passwordMinLength": "Password must be at least 8 characters.",
+    "passwordsDoNotMatch": "Passwords do not match.",
+    "usernameRequired": "Username is required.",
+    "phoneRequired": "Phone number is required.",
+    "roleRequired": "Select a role.",
+    "statusRequired": "Select a status.",
+    "titleRequired": "Title is required.",
+    "labelRequired": "Select a label.",
+    "priorityRequired": "Select a priority.",
+    "usernameMinLength": "Username must be at least 2 characters.",
+    "bioMaxLength": "Bio must be 160 characters or fewer.",
+    "urlRequired": "URL is required.",
+    "urlInvalid": "Enter a valid URL.",
+    "nameMinLength": "Name must be at least 2 characters.",
+    "dobRequired": "A date of birth is required.",
+    "languageRequired": "Select a language.",
+    "sectionsRequired": "Select at least one section."
+  },
+  "signIn": {
+    "title": "Sign in",
+    "description": "Enter your email and password to access the dashboard.",
+    "email": "Email",
+    "emailPlaceholder": "name@example.com",
+    "password": "Password",
+    "submit": "Sign in",
+    "forgotPassword": "Forgot your password?",
+    "noAccount": "Don't have an account?",
+    "createAccount": "Create one"
+  },
+  "otp": {
+    "title": "Verify your identity",
+    "description": "Enter the 6-digit code we sent you.",
+    "autoSubmitHint": "This will submit automatically once complete."
+  },
+  "signIn2": {
+    "quote": "This starter shipped our internal tools dashboard in a week instead of a quarter.",
+    "quoteAuthor": "Engineering Team"
+  },
+  "signUp": {
+    "title": "Create an account",
+    "description": "Enter your details below to create your account.",
+    "name": "Name",
+    "namePlaceholder": "Jane Doe",
+    "confirmPassword": "Confirm Password",
+    "submit": "Create account",
+    "haveAccount": "Already have an account?",
+    "signIn": "Sign in"
+  },
+  "forgotPassword": {
+    "title": "Forgot password",
+    "description": "Enter your email and we'll send you a link to reset your password.",
+    "submit": "Send reset link",
+    "successDescription": "If an account exists for {{email}}, a reset link is on its way.",
+    "backToSignIn": "Back to sign in"
+  },
+  "layout": {
+    "skipToMain": "Skip to main content"
+  },
+  "passwordInput": {
+    "show": "Show password",
+    "hide": "Hide password"
+  },
+  "confirmDialog": {
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "typeToConfirm": "Type {{value}} to confirm."
+  },
+  "profileDropdown": {
+    "myAccount": "My Account",
+    "profile": "Profile",
+    "settings": "Settings",
+    "signOut": "Sign out"
+  },
+  "signOutDialog": {
+    "title": "Sign out?",
+    "description": "You'll need to sign in again to access the dashboard.",
+    "confirm": "Sign out"
+  },
+  "configDrawer": {
+    "title": "Configuration",
+    "description": "Live playground for sidebar layout, theme, and font.",
+    "sidebarVariant": "Sidebar variant",
+    "variantInset": "Inset",
+    "variantSidebar": "Sidebar",
+    "variantFloating": "Floating",
+    "sidebarCollapsible": "Collapsible mode",
+    "collapsibleOffcanvas": "Offcanvas",
+    "collapsibleIcon": "Icon",
+    "collapsibleNone": "None",
+    "theme": "Theme",
+    "font": {
+      "label": "Font",
+      "outfit": "Outfit",
+      "inter": "Inter",
+      "system": "System"
+    },
+    "reset": "Reset to defaults"
+  },
+  "commandMenu": {
+    "title": "Command Menu",
+    "placeholder": "Type a command or search...",
+    "empty": "No results found.",
+    "theme": "Theme",
+    "lightTheme": "Light",
+    "darkTheme": "Dark",
+    "systemTheme": "System"
+  },
   "sidebar": {
     "title": "Dashboard Starter",
     "overview": "Overview",
@@ -25,7 +170,20 @@
     "recentSalesDescription": "You made 265 sales this month.",
     "checkSandbox": "Check out the UI Sandbox",
     "desktop": "Desktop",
-    "mobile": "Mobile"
+    "mobile": "Mobile",
+    "tabs": {
+      "overview": "Overview",
+      "analytics": "Analytics"
+    },
+    "analytics": {
+      "title": "Analytics",
+      "description": "Sessions and pageviews over the last 6 months.",
+      "sessions": "Sessions",
+      "pageviews": "Pageviews",
+      "activeUsers": "Active Users",
+      "bounceRate": "Bounce Rate",
+      "avgSession": "Avg. Session"
+    }
   },
   "sandbox": {
     "badge": "Design System",
@@ -34,5 +192,274 @@
   },
   "footer": {
     "builtBy": "Built by"
+  },
+  "nav": {
+    "teams": {
+      "label": "Teams",
+      "addTeam": "Add team",
+      "starter": "Dashboard Starter",
+      "starterPlan": "Vite + Shadcn UI",
+      "acme": "Acme Inc.",
+      "acmePlan": "Enterprise",
+      "globex": "Globex Corp",
+      "globexPlan": "Startup"
+    },
+    "groups": {
+      "general": "General",
+      "pages": "Pages",
+      "other": "Other"
+    },
+    "dashboard": "Dashboard",
+    "tasks": "Tasks",
+    "apps": "Apps",
+    "chats": "Chats",
+    "users": "Users",
+    "sandbox": "Sandbox",
+    "auth": "Auth",
+    "authSignIn": "Sign In",
+    "authSignIn2": "Sign In (2 Col)",
+    "authSignUp": "Sign Up",
+    "authForgotPassword": "Forgot Password",
+    "authOtp": "OTP",
+    "errors": "Errors",
+    "errorUnauthorized": "Unauthorized",
+    "errorForbidden": "Forbidden",
+    "errorNotFound": "Not Found",
+    "errorServer": "Internal Server Error",
+    "errorMaintenance": "Maintenance Error",
+    "settings": "Settings",
+    "settingsProfile": "Profile",
+    "settingsAccount": "Account",
+    "settingsAppearance": "Appearance",
+    "settingsNotifications": "Notifications",
+    "settingsDisplay": "Display",
+    "helpCenter": "Help Center",
+    "signOut": "Sign out"
+  },
+  "dataTable": {
+    "sortAsc": "Asc",
+    "sortDesc": "Desc",
+    "clearSort": "Clear sort",
+    "hideColumn": "Hide column",
+    "view": "View",
+    "toggleColumns": "Toggle columns",
+    "rowsPerPage": "Rows per page",
+    "pageOfPages": "Page {{page}} of {{pageCount}}",
+    "firstPage": "Go to first page",
+    "previousPage": "Go to previous page",
+    "nextPage": "Go to next page",
+    "lastPage": "Go to last page",
+    "selectedCount": "{{selected}} of {{total}} row(s) selected.",
+    "noResults": "No results.",
+    "selectedCountShort": "{{count}} selected",
+    "clearFilter": "Clear filter",
+    "resetFilters": "Reset",
+    "rowsSelected": "{{count}} selected",
+    "clearSelection": "Clear selection",
+    "selectAll": "Select all",
+    "selectRow": "Select row"
+  },
+  "users": {
+    "title": "Users",
+    "description": "Manage users and their roles here.",
+    "columns": {
+      "username": "Username",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "status": "Status",
+      "role": "Role",
+      "createdAt": "Created At",
+      "actions": "Actions"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive",
+      "invited": "Invited",
+      "suspended": "Suspended"
+    },
+    "role": {
+      "superadmin": "Super Admin",
+      "admin": "Admin",
+      "manager": "Manager",
+      "cashier": "Cashier"
+    },
+    "searchPlaceholder": "Filter by username or email...",
+    "actions": {
+      "edit": "Edit",
+      "delete": "Delete"
+    },
+    "addUser": "Add User",
+    "editUser": "Edit User",
+    "addUserDescription": "Create a new user here. Click save when you are done.",
+    "editUserDescription": "Update the user's details here. Click save when you are done.",
+    "saveChanges": "Save changes",
+    "inviteUser": "Invite User",
+    "inviteUserDescription": "Invite a new user by email. They will receive an invitation to join.",
+    "inviteMessage": "Message (optional)",
+    "inviteMessagePlaceholder": "Add a personal note to the invite email...",
+    "deleteUser": "Delete User",
+    "deleteUserDescription": "Are you sure you want to delete {{username}}? This action cannot be undone.",
+    "deleteUsers": "Delete Users",
+    "deleteUsersDescription": "Are you sure you want to delete {{count}} user(s)? This action cannot be undone."
+  },
+  "tasks": {
+    "title": "Tasks",
+    "description": "Here is a list of your tasks for this project.",
+    "searchPlaceholder": "Filter by title...",
+    "editTask": "Edit Task",
+    "deleteTask": "Delete Task",
+    "columns": {
+      "id": "Task",
+      "title": "Title",
+      "status": "Status",
+      "priority": "Priority",
+      "actions": "Actions"
+    },
+    "status": {
+      "backlog": "Backlog",
+      "todo": "Todo",
+      "in-progress": "In Progress",
+      "done": "Done",
+      "canceled": "Canceled"
+    },
+    "label": {
+      "bug": "Bug",
+      "feature": "Feature",
+      "documentation": "Documentation",
+      "label": "Label"
+    },
+    "priority": {
+      "low": "Low",
+      "medium": "Medium",
+      "high": "High"
+    },
+    "actions": {
+      "edit": "Edit",
+      "delete": "Delete",
+      "copyId": "Copy Task ID",
+      "labels": "Labels"
+    },
+    "createTask": "New Task",
+    "createTaskDescription": "Add a new task here. Click save when you are done.",
+    "editTaskDescription": "Update the task's details here. Click save when you are done.",
+    "deleteTaskDescription": "Are you sure you want to delete {{id}}? This action cannot be undone.",
+    "deleteTasks": "Delete Tasks",
+    "deleteTasksDescription": "Are you sure you want to delete {{count}} task(s)? This action cannot be undone.",
+    "import": {
+      "title": "Import Tasks",
+      "description": "Import tasks from a CSV file. Columns required: title, status, label, priority.",
+      "filePrompt": "CSV file",
+      "wrongExtension": "Please upload a .csv file.",
+      "tooLarge": "File is too large - the limit is {{maxSizeMb}}MB.",
+      "confirm": "Import {{count}} task(s)",
+      "errors": {
+        "empty": "The file is empty.",
+        "missingColumns": "Missing required column(s): {{columns}}.",
+        "noDataRows": "The file has no data rows.",
+        "columnCountMismatch": "Row {{row}}: expected {{expected}} columns, found {{found}}.",
+        "titleRequired": "Row {{row}}: title is required.",
+        "invalidStatus": "Row {{row}}: \"{{value}}\" is not a valid status.",
+        "invalidLabel": "Row {{row}}: \"{{value}}\" is not a valid label.",
+        "invalidPriority": "Row {{row}}: \"{{value}}\" is not a valid priority."
+      }
+    }
+  },
+  "apps": {
+    "title": "App Integrations",
+    "description": "Connect the tools your team already uses.",
+    "searchPlaceholder": "Filter apps...",
+    "filterAll": "All",
+    "filterConnected": "Connected",
+    "sortAsc": "Name A-Z",
+    "sortDesc": "Name Z-A",
+    "connect": "Connect",
+    "connected": "Connected",
+    "descriptions": {
+      "teamChat": "Real-time messaging and channels for your whole team.",
+      "codeHub": "Host and review code alongside your issue tracker.",
+      "notekeeper": "Capture notes and wikis in one shared workspace.",
+      "designly": "Collaborative interface design and prototyping.",
+      "filedrop": "Sync and share files across every device.",
+      "taskboard": "Kanban boards for tracking work in progress.",
+      "projecthub": "Plan projects and track team workload.",
+      "meetup": "Video calls and screen sharing for remote teams.",
+      "payflow": "Accept payments and manage subscriptions.",
+      "mailblast": "Send newsletters and marketing campaigns.",
+      "communitycord": "Voice and text chat for your community.",
+      "clouddocs": "Store and co-edit documents in the cloud."
+    }
+  },
+  "settings": {
+    "description": "Manage your account settings and set e-mail preferences.",
+    "profile": {
+      "title": "Profile",
+      "description": "This is how others will see you on the site.",
+      "username": "Username",
+      "email": "Email",
+      "bio": "Bio",
+      "bioDescription": "You can @mention other users and organizations.",
+      "urls": "URLs",
+      "urlsDescription": "Add links to your website, blog, or social media profiles.",
+      "urlPlaceholder": "https://example.com",
+      "addUrl": "Add URL",
+      "removeUrl": "Remove URL",
+      "update": "Update profile"
+    },
+    "account": {
+      "title": "Account",
+      "description": "Update your account settings. Set your preferred language and date of birth.",
+      "name": "Name",
+      "dob": "Date of birth",
+      "dobPlaceholder": "Pick a date",
+      "language": "Language",
+      "update": "Update account"
+    },
+    "appearance": {
+      "title": "Appearance",
+      "description": "Customize the appearance of the app. Automatically switch between day and night themes."
+    },
+    "notifications": {
+      "title": "Notifications",
+      "description": "Configure how you receive notifications.",
+      "type": "Notify me about...",
+      "types": {
+        "all": "All new messages",
+        "mentions": "Direct messages and mentions",
+        "none": "Nothing"
+      },
+      "communicationEmails": "Communication emails",
+      "communicationEmailsDescription": "Receive emails about your account activity.",
+      "marketingEmails": "Marketing emails",
+      "marketingEmailsDescription": "Receive emails about new products, features, and more.",
+      "socialEmails": "Social emails",
+      "socialEmailsDescription": "Receive emails for friend requests, follows, and more.",
+      "securityEmails": "Security emails",
+      "securityEmailsDescription": "Receive emails about your account security. Cannot be disabled.",
+      "update": "Update notifications"
+    },
+    "display": {
+      "title": "Display",
+      "description": "Turn items on or off to control what is displayed in the sidebar.",
+      "sections": "Sidebar sections",
+      "sectionsDescription": "Select the sections you want to see in the sidebar.",
+      "update": "Update display"
+    }
+  },
+  "chats": {
+    "searchPlaceholder": "Search conversations...",
+    "noResults": "No conversations found.",
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "back": "Back",
+    "promptPlaceholder": "Ask anything...",
+    "send": "Send",
+    "stepsCount_one": "{{count}} step",
+    "stepsCount_other": "{{count}} steps",
+    "stepsTab": "Steps",
+    "reasoningTab": "Reasoning",
+    "searchTab": "Search",
+    "noReasoningRecorded": "No reasoning recorded.",
+    "noSearchResults": "No search results."
   }
 }

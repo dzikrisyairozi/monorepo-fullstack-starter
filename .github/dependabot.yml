@@ -28,6 +28,19 @@ updates:
           - 'minor'
           - 'patch'
           - 'major'
+    # typescript-eslint 8.x hard-crashes on TypeScript >=7 (no config-level
+    # workaround - see typescript-eslint/typescript-eslint#10940, #12518) and
+    # eslint-plugin-react 7.37.5 (pulled in by eslint-config-next and
+    # @repo/eslint-config's react-internal preset) only supports eslint up to
+    # ^9.7 and crashes on the removed context.getFilename() API under 10.x.
+    # Repo commit 2adfa16 rolled both back for exactly this reason - without
+    # these ignores, this same weekly group re-bumps them and silently
+    # re-breaks every build/lint/test gate. See docs/adr/0001-toolchain-pins.md.
+    ignore:
+      - dependency-name: 'typescript'
+        versions: ['>=7']
+      - dependency-name: 'eslint'
+        versions: ['>=10']
 
   # GitHub Actions updates (separate from npm deps)
   - package-ecosystem: 'github-actions'

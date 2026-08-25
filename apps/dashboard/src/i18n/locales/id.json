@@ -1,4 +1,149 @@
 {
+  "showSubmittedData": {
+    "title": "Anda mengirimkan nilai berikut:"
+  },
+  "helpCenter": {
+    "title": "Pusat Bantuan segera hadir",
+    "description": "Kami sedang membangun dokumentasi, panduan, dan sumber daya dukungan. Periksa kembali nanti."
+  },
+  "errors": {
+    "goBack": "Kembali",
+    "backToHome": "Kembali ke beranda",
+    "sessionExpired": "Sesi Anda telah berakhir. Silakan masuk kembali.",
+    "genericFallback": "Terjadi kesalahan. Silakan coba lagi.",
+    "unauthorized": {
+      "title": "Tidak diotorisasi",
+      "description": "Anda perlu masuk untuk mengakses halaman ini."
+    },
+    "forbidden": {
+      "title": "Akses terlarang",
+      "description": "Anda tidak memiliki izin untuk mengakses sumber daya ini."
+    },
+    "notFound": {
+      "title": "Halaman tidak ditemukan",
+      "description": "Halaman yang Anda cari tidak ada atau telah dipindahkan."
+    },
+    "general": {
+      "title": "Terjadi kesalahan",
+      "description": "Terjadi kesalahan tak terduga. Silakan coba lagi nanti."
+    },
+    "maintenance": {
+      "title": "Sedang pemeliharaan",
+      "description": "Layanan ini sementara tidak tersedia. Silakan periksa kembali nanti."
+    }
+  },
+  "validation": {
+    "nameRequired": "Nama wajib diisi.",
+    "emailRequired": "Email wajib diisi.",
+    "emailInvalid": "Masukkan alamat email yang valid.",
+    "passwordRequired": "Kata sandi wajib diisi.",
+    "passwordMinLength": "Kata sandi minimal 8 karakter.",
+    "passwordsDoNotMatch": "Kata sandi tidak cocok.",
+    "usernameRequired": "Nama pengguna wajib diisi.",
+    "phoneRequired": "Nomor telepon wajib diisi.",
+    "roleRequired": "Pilih peran.",
+    "statusRequired": "Pilih status.",
+    "titleRequired": "Judul wajib diisi.",
+    "labelRequired": "Pilih label.",
+    "priorityRequired": "Pilih prioritas.",
+    "usernameMinLength": "Nama pengguna minimal 2 karakter.",
+    "bioMaxLength": "Bio maksimal 160 karakter.",
+    "urlRequired": "URL wajib diisi.",
+    "urlInvalid": "Masukkan URL yang valid.",
+    "nameMinLength": "Nama minimal 2 karakter.",
+    "dobRequired": "Tanggal lahir wajib diisi.",
+    "languageRequired": "Pilih bahasa.",
+    "sectionsRequired": "Pilih setidaknya satu bagian."
+  },
+  "signIn": {
+    "title": "Masuk",
+    "description": "Masukkan email dan kata sandi Anda untuk mengakses dasbor.",
+    "email": "Email",
+    "emailPlaceholder": "nama@contoh.com",
+    "password": "Kata Sandi",
+    "submit": "Masuk",
+    "forgotPassword": "Lupa kata sandi?",
+    "noAccount": "Belum punya akun?",
+    "createAccount": "Buat akun"
+  },
+  "otp": {
+    "title": "Verifikasi identitas Anda",
+    "description": "Masukkan kode 6 digit yang kami kirimkan.",
+    "autoSubmitHint": "Ini akan otomatis terkirim setelah lengkap."
+  },
+  "signIn2": {
+    "quote": "Starter ini merilis dashboard alat internal kami dalam seminggu, bukan satu kuartal.",
+    "quoteAuthor": "Tim Rekayasa"
+  },
+  "signUp": {
+    "title": "Buat akun",
+    "description": "Masukkan detail Anda di bawah untuk membuat akun.",
+    "name": "Nama",
+    "namePlaceholder": "Jane Doe",
+    "confirmPassword": "Konfirmasi Kata Sandi",
+    "submit": "Buat akun",
+    "haveAccount": "Sudah punya akun?",
+    "signIn": "Masuk"
+  },
+  "forgotPassword": {
+    "title": "Lupa kata sandi",
+    "description": "Masukkan email Anda dan kami akan mengirimkan tautan untuk mengatur ulang kata sandi.",
+    "submit": "Kirim tautan reset",
+    "successDescription": "Jika akun untuk {{email}} ada, tautan reset sedang dalam perjalanan.",
+    "backToSignIn": "Kembali ke halaman masuk"
+  },
+  "layout": {
+    "skipToMain": "Lewati ke konten utama"
+  },
+  "passwordInput": {
+    "show": "Tampilkan kata sandi",
+    "hide": "Sembunyikan kata sandi"
+  },
+  "confirmDialog": {
+    "confirm": "Konfirmasi",
+    "cancel": "Batal",
+    "typeToConfirm": "Ketik {{value}} untuk konfirmasi."
+  },
+  "profileDropdown": {
+    "myAccount": "Akun Saya",
+    "profile": "Profil",
+    "settings": "Pengaturan",
+    "signOut": "Keluar"
+  },
+  "signOutDialog": {
+    "title": "Keluar?",
+    "description": "Anda perlu masuk kembali untuk mengakses dasbor.",
+    "confirm": "Keluar"
+  },
+  "configDrawer": {
+    "title": "Konfigurasi",
+    "description": "Playground langsung untuk tata letak sidebar, tema, dan font.",
+    "sidebarVariant": "Varian sidebar",
+    "variantInset": "Inset",
+    "variantSidebar": "Sidebar",
+    "variantFloating": "Melayang",
+    "sidebarCollapsible": "Mode collapse",
+    "collapsibleOffcanvas": "Offcanvas",
+    "collapsibleIcon": "Ikon",
+    "collapsibleNone": "Tidak ada",
+    "theme": "Tema",
+    "font": {
+      "label": "Font",
+      "outfit": "Outfit",
+      "inter": "Inter",
+      "system": "Sistem"
+    },
+    "reset": "Kembalikan ke default"
+  },
+  "commandMenu": {
+    "title": "Menu Perintah",
+    "placeholder": "Ketik perintah atau cari...",
+    "empty": "Tidak ada hasil ditemukan.",
+    "theme": "Tema",
+    "lightTheme": "Terang",
+    "darkTheme": "Gelap",
+    "systemTheme": "Sistem"
+  },
   "sidebar": {
     "title": "Dashboard Starter",
     "overview": "Ringkasan",
@@ -25,7 +170,20 @@
     "recentSalesDescription": "Anda melakukan 265 penjualan bulan ini.",
     "checkSandbox": "Lihat Sandbox UI",
     "desktop": "Desktop",
-    "mobile": "Seluler"
+    "mobile": "Seluler",
+    "tabs": {
+      "overview": "Ringkasan",
+      "analytics": "Analitik"
+    },
+    "analytics": {
+      "title": "Analitik",
+      "description": "Sesi dan tampilan halaman selama 6 bulan terakhir.",
+      "sessions": "Sesi",
+      "pageviews": "Tampilan Halaman",
+      "activeUsers": "Pengguna Aktif",
+      "bounceRate": "Rasio Pentalan",
+      "avgSession": "Rata-rata Sesi"
+    }
   },
   "sandbox": {
     "badge": "Sistem Desain",
@@ -34,5 +192,274 @@
   },
   "footer": {
     "builtBy": "Dibuat oleh"
+  },
+  "nav": {
+    "teams": {
+      "label": "Tim",
+      "addTeam": "Tambah tim",
+      "starter": "Dashboard Starter",
+      "starterPlan": "Vite + Shadcn UI",
+      "acme": "Acme Inc.",
+      "acmePlan": "Enterprise",
+      "globex": "Globex Corp",
+      "globexPlan": "Startup"
+    },
+    "groups": {
+      "general": "Umum",
+      "pages": "Halaman",
+      "other": "Lainnya"
+    },
+    "dashboard": "Dasbor",
+    "tasks": "Tugas",
+    "apps": "Aplikasi",
+    "chats": "Obrolan",
+    "users": "Pengguna",
+    "sandbox": "Sandbox",
+    "auth": "Autentikasi",
+    "authSignIn": "Masuk",
+    "authSignIn2": "Masuk (2 Kolom)",
+    "authSignUp": "Daftar",
+    "authForgotPassword": "Lupa Kata Sandi",
+    "authOtp": "OTP",
+    "errors": "Kesalahan",
+    "errorUnauthorized": "Tidak Diotorisasi",
+    "errorForbidden": "Terlarang",
+    "errorNotFound": "Tidak Ditemukan",
+    "errorServer": "Kesalahan Server Internal",
+    "errorMaintenance": "Sedang Pemeliharaan",
+    "settings": "Pengaturan",
+    "settingsProfile": "Profil",
+    "settingsAccount": "Akun",
+    "settingsAppearance": "Tampilan",
+    "settingsNotifications": "Notifikasi",
+    "settingsDisplay": "Layar",
+    "helpCenter": "Pusat Bantuan",
+    "signOut": "Keluar"
+  },
+  "dataTable": {
+    "sortAsc": "Naik",
+    "sortDesc": "Turun",
+    "clearSort": "Hapus urutan",
+    "hideColumn": "Sembunyikan kolom",
+    "view": "Tampilan",
+    "toggleColumns": "Alihkan kolom",
+    "rowsPerPage": "Baris per halaman",
+    "pageOfPages": "Halaman {{page}} dari {{pageCount}}",
+    "firstPage": "Ke halaman pertama",
+    "previousPage": "Ke halaman sebelumnya",
+    "nextPage": "Ke halaman berikutnya",
+    "lastPage": "Ke halaman terakhir",
+    "selectedCount": "{{selected}} dari {{total}} baris dipilih.",
+    "noResults": "Tidak ada hasil.",
+    "selectedCountShort": "{{count}} dipilih",
+    "clearFilter": "Hapus filter",
+    "resetFilters": "Atur ulang",
+    "rowsSelected": "{{count}} dipilih",
+    "clearSelection": "Hapus pilihan",
+    "selectAll": "Pilih semua",
+    "selectRow": "Pilih baris"
+  },
+  "users": {
+    "title": "Pengguna",
+    "description": "Kelola pengguna dan peran mereka di sini.",
+    "columns": {
+      "username": "Nama Pengguna",
+      "name": "Nama",
+      "email": "Email",
+      "phone": "Telepon",
+      "status": "Status",
+      "role": "Peran",
+      "createdAt": "Dibuat Pada",
+      "actions": "Aksi"
+    },
+    "status": {
+      "active": "Aktif",
+      "inactive": "Tidak Aktif",
+      "invited": "Diundang",
+      "suspended": "Ditangguhkan"
+    },
+    "role": {
+      "superadmin": "Super Admin",
+      "admin": "Admin",
+      "manager": "Manajer",
+      "cashier": "Kasir"
+    },
+    "searchPlaceholder": "Filter berdasarkan nama pengguna atau email...",
+    "actions": {
+      "edit": "Ubah",
+      "delete": "Hapus"
+    },
+    "addUser": "Tambah Pengguna",
+    "editUser": "Ubah Pengguna",
+    "addUserDescription": "Buat pengguna baru di sini. Klik simpan jika sudah selesai.",
+    "editUserDescription": "Perbarui detail pengguna di sini. Klik simpan jika sudah selesai.",
+    "saveChanges": "Simpan perubahan",
+    "inviteUser": "Undang Pengguna",
+    "inviteUserDescription": "Undang pengguna baru melalui email. Mereka akan menerima undangan untuk bergabung.",
+    "inviteMessage": "Pesan (opsional)",
+    "inviteMessagePlaceholder": "Tambahkan catatan pribadi ke email undangan...",
+    "deleteUser": "Hapus Pengguna",
+    "deleteUserDescription": "Apakah Anda yakin ingin menghapus {{username}}? Tindakan ini tidak dapat dibatalkan.",
+    "deleteUsers": "Hapus Pengguna",
+    "deleteUsersDescription": "Apakah Anda yakin ingin menghapus {{count}} pengguna? Tindakan ini tidak dapat dibatalkan."
+  },
+  "tasks": {
+    "title": "Tugas",
+    "description": "Berikut daftar tugas untuk proyek ini.",
+    "searchPlaceholder": "Filter berdasarkan judul...",
+    "editTask": "Ubah Tugas",
+    "deleteTask": "Hapus Tugas",
+    "columns": {
+      "id": "Tugas",
+      "title": "Judul",
+      "status": "Status",
+      "priority": "Prioritas",
+      "actions": "Aksi"
+    },
+    "status": {
+      "backlog": "Backlog",
+      "todo": "Akan Dikerjakan",
+      "in-progress": "Sedang Dikerjakan",
+      "done": "Selesai",
+      "canceled": "Dibatalkan"
+    },
+    "label": {
+      "bug": "Bug",
+      "feature": "Fitur",
+      "documentation": "Dokumentasi",
+      "label": "Label"
+    },
+    "priority": {
+      "low": "Rendah",
+      "medium": "Sedang",
+      "high": "Tinggi"
+    },
+    "actions": {
+      "edit": "Ubah",
+      "delete": "Hapus",
+      "copyId": "Salin ID Tugas",
+      "labels": "Label"
+    },
+    "createTask": "Tugas Baru",
+    "createTaskDescription": "Tambah tugas baru di sini. Klik simpan jika sudah selesai.",
+    "editTaskDescription": "Perbarui detail tugas di sini. Klik simpan jika sudah selesai.",
+    "deleteTaskDescription": "Apakah Anda yakin ingin menghapus {{id}}? Tindakan ini tidak dapat dibatalkan.",
+    "deleteTasks": "Hapus Tugas",
+    "deleteTasksDescription": "Apakah Anda yakin ingin menghapus {{count}} tugas? Tindakan ini tidak dapat dibatalkan.",
+    "import": {
+      "title": "Impor Tugas",
+      "description": "Impor tugas dari berkas CSV. Kolom yang wajib: title, status, label, priority.",
+      "filePrompt": "Berkas CSV",
+      "wrongExtension": "Silakan unggah berkas .csv.",
+      "tooLarge": "Berkas terlalu besar - batas maksimum {{maxSizeMb}}MB.",
+      "confirm": "Impor {{count}} tugas",
+      "errors": {
+        "empty": "Berkas kosong.",
+        "missingColumns": "Kolom wajib tidak ada: {{columns}}.",
+        "noDataRows": "Berkas tidak memiliki baris data.",
+        "columnCountMismatch": "Baris {{row}}: diharapkan {{expected}} kolom, ditemukan {{found}}.",
+        "titleRequired": "Baris {{row}}: judul wajib diisi.",
+        "invalidStatus": "Baris {{row}}: \"{{value}}\" bukan status yang valid.",
+        "invalidLabel": "Baris {{row}}: \"{{value}}\" bukan label yang valid.",
+        "invalidPriority": "Baris {{row}}: \"{{value}}\" bukan prioritas yang valid."
+      }
+    }
+  },
+  "apps": {
+    "title": "Integrasi Aplikasi",
+    "description": "Hubungkan alat yang sudah digunakan tim Anda.",
+    "searchPlaceholder": "Filter aplikasi...",
+    "filterAll": "Semua",
+    "filterConnected": "Terhubung",
+    "sortAsc": "Nama A-Z",
+    "sortDesc": "Nama Z-A",
+    "connect": "Hubungkan",
+    "connected": "Terhubung",
+    "descriptions": {
+      "teamChat": "Pesan real-time dan kanal untuk seluruh tim Anda.",
+      "codeHub": "Hosting dan review kode bersama pelacak isu.",
+      "notekeeper": "Catat catatan dan wiki dalam satu ruang kerja bersama.",
+      "designly": "Desain antarmuka dan prototipe kolaboratif.",
+      "filedrop": "Sinkronkan dan bagikan berkas di setiap perangkat.",
+      "taskboard": "Papan kanban untuk melacak pekerjaan yang berlangsung.",
+      "projecthub": "Rencanakan proyek dan lacak beban kerja tim.",
+      "meetup": "Panggilan video dan berbagi layar untuk tim jarak jauh.",
+      "payflow": "Terima pembayaran dan kelola langganan.",
+      "mailblast": "Kirim buletin dan kampanye pemasaran.",
+      "communitycord": "Obrolan suara dan teks untuk komunitas Anda.",
+      "clouddocs": "Simpan dan sunting dokumen bersama di cloud."
+    }
+  },
+  "settings": {
+    "description": "Kelola pengaturan akun Anda dan atur preferensi email.",
+    "profile": {
+      "title": "Profil",
+      "description": "Beginilah cara orang lain melihat Anda di situs ini.",
+      "username": "Nama Pengguna",
+      "email": "Email",
+      "bio": "Bio",
+      "bioDescription": "Anda dapat @mention pengguna atau organisasi lain.",
+      "urls": "URL",
+      "urlsDescription": "Tambahkan tautan ke situs web, blog, atau profil media sosial Anda.",
+      "urlPlaceholder": "https://contoh.com",
+      "addUrl": "Tambah URL",
+      "removeUrl": "Hapus URL",
+      "update": "Perbarui profil"
+    },
+    "account": {
+      "title": "Akun",
+      "description": "Perbarui pengaturan akun Anda. Atur bahasa dan tanggal lahir pilihan Anda.",
+      "name": "Nama",
+      "dob": "Tanggal lahir",
+      "dobPlaceholder": "Pilih tanggal",
+      "language": "Bahasa",
+      "update": "Perbarui akun"
+    },
+    "appearance": {
+      "title": "Tampilan",
+      "description": "Sesuaikan tampilan aplikasi. Beralih otomatis antara tema siang dan malam."
+    },
+    "notifications": {
+      "title": "Notifikasi",
+      "description": "Atur bagaimana Anda menerima notifikasi.",
+      "type": "Beri tahu saya tentang...",
+      "types": {
+        "all": "Semua pesan baru",
+        "mentions": "Pesan langsung dan sebutan",
+        "none": "Tidak ada"
+      },
+      "communicationEmails": "Email komunikasi",
+      "communicationEmailsDescription": "Terima email tentang aktivitas akun Anda.",
+      "marketingEmails": "Email pemasaran",
+      "marketingEmailsDescription": "Terima email tentang produk, fitur baru, dan lainnya.",
+      "socialEmails": "Email sosial",
+      "socialEmailsDescription": "Terima email untuk permintaan pertemanan, pengikut, dan lainnya.",
+      "securityEmails": "Email keamanan",
+      "securityEmailsDescription": "Terima email tentang keamanan akun Anda. Tidak dapat dinonaktifkan.",
+      "update": "Perbarui notifikasi"
+    },
+    "display": {
+      "title": "Tampilan",
+      "description": "Aktifkan atau nonaktifkan item untuk mengontrol apa yang ditampilkan di sidebar.",
+      "sections": "Bagian sidebar",
+      "sectionsDescription": "Pilih bagian yang ingin Anda lihat di sidebar.",
+      "update": "Perbarui tampilan"
+    }
+  },
+  "chats": {
+    "searchPlaceholder": "Cari percakapan...",
+    "noResults": "Tidak ada percakapan ditemukan.",
+    "today": "Hari ini",
+    "yesterday": "Kemarin",
+    "back": "Kembali",
+    "promptPlaceholder": "Tanya apa saja...",
+    "send": "Kirim",
+    "stepsCount_one": "{{count}} langkah",
+    "stepsCount_other": "{{count}} langkah",
+    "stepsTab": "Langkah",
+    "reasoningTab": "Alasan",
+    "searchTab": "Pencarian",
+    "noReasoningRecorded": "Tidak ada alasan yang tercatat.",
+    "noSearchResults": "Tidak ada hasil pencarian."
   }
 }

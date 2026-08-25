@@ -141,7 +141,7 @@ pnpm build
 
 ```bash
 pnpm build --filter=web
-pnpm build --filter=@repo/dashboard
+pnpm build --filter=dashboard
 pnpm build --filter=api
 pnpm build --filter=docs
 ```

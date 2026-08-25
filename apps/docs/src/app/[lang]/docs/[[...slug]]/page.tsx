@@ -1,4 +1,5 @@
 import { source } from '@/lib/source';
+import type { InferPageType } from 'fumadocs-core/source';
 import {
   DocsPage,
   DocsBody,
@@ -8,19 +9,24 @@ import {
 import { notFound } from 'next/navigation';
 import defaultMdxComponents from 'fumadocs-ui/mdx';
 
+type DocsPageData = InferPageType<typeof source>;
+
 export default async function Page(props: {
   params: Promise<{ slug?: string[]; lang: string }>;
 }) {
   const params = await props.params;
-  const page = source.getPage(params.slug, params.lang);
+  const page: DocsPageData | undefined = source.getPage(
+    params.slug,
+    params.lang,
+  );
   if (!page) notFound();
 
-  const MDX = (page.data as any).body || (page.data as any).exports?.default;
+  const MDX = page.data.body;
 
   return (
     <DocsPage
-      toc={(page.data as any).toc}
-      full={(page.data as any).full}
+      toc={page.data.toc}
+      full={page.data.full}
       tableOfContent={{ style: 'clerk' }}
     >
       <DocsTitle>{page.data.title}</DocsTitle>

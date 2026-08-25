@@ -95,7 +95,9 @@ function Carousel({
 
   React.useEffect(() => {
     if (!api) return;
-    onSelect(api);
+    // Deferred to a microtask so the initial sync doesn't call setState
+    // synchronously as the first statement of the effect body.
+    queueMicrotask(() => onSelect(api));
     api.on('reInit', onSelect);
     api.on('select', onSelect);
 

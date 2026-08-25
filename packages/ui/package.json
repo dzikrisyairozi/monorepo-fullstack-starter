@@ -2,6 +2,7 @@
   "name": "@repo/ui",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "exports": {
     "./utils": {
       "types": "./src/lib/utils.ts",
@@ -10,6 +11,10 @@
     "./components/*": {
       "types": "./src/components/*.tsx",
       "import": "./src/components/*.tsx"
+    },
+    "./components/chat": {
+      "types": "./src/components/chat/index.ts",
+      "import": "./src/components/chat/index.ts"
     },
     "./hooks/*": {
       "types": "./src/hooks/*.ts",
@@ -21,7 +26,9 @@
     }
   },
   "scripts": {
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.9.1",
@@ -77,12 +84,17 @@
     "@repo/eslint-config": "workspace:*",
     "@repo/tailwind-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
+    "@testing-library/react": "^16.0.1",
+    "@testing-library/user-event": "^14.5.2",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
+    "@vitejs/plugin-react": "^6.1.0",
+    "jsdom": "^25.0.1",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "tailwindcss": "^4.3.3",
-    "typescript": "^7.0.2"
+    "typescript": "^6.0.3",
+    "vitest": "^4.0.0"
   },
   "peerDependencies": {
     "react": "^18.2.0 || ^19.0.0",
