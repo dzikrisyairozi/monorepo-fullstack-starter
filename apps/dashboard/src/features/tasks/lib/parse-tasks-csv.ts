@@ -41,6 +41,42 @@ function isTaskPriority(value: string): value is TaskPriority {
   return (TASK_PRIORITIES as readonly string[]).includes(value);
 }
 
+// ponytail: handles RFC 4180 quoted fields (embedded commas, doubled ""
+// escapes) on a single physical line only - a quoted value spanning
+// multiple lines is not supported, since lines are already split on \r\n|\n
+// before this runs. Upgrade to a proper streaming tokenizer if that's
+// ever needed.
+function parseCsvLine(line: string): string[] {
+  const cells: string[] = [];
+  let current = '';
+  let inQuotes = false;
+
+  for (let i = 0; i < line.length; i++) {
+    const char = line[i];
+
+    if (inQuotes) {
+      if (char === '"' && line[i + 1] === '"') {
+        current += '"';
+        i++;
+      } else if (char === '"') {
+        inQuotes = false;
+      } else {
+        current += char;
+      }
+    } else if (char === '"') {
+      inQuotes = true;
+    } else if (char === ',') {
+      cells.push(current);
+      current = '';
+    } else {
+      current += char;
+    }
+  }
+  cells.push(current);
+
+  return cells;
+}
+
 export function parseTasksCsv(content: string): ParseTasksCsvResult {
   const lines = content
     .split(/\r\n|\n/)
@@ -50,7 +86,9 @@ export function parseTasksCsv(content: string): ParseTasksCsvResult {
     return { ok: false, error: { code: 'empty' } };
   }
 
-  const header = lines[0].split(',').map((cell) => cell.trim().toLowerCase());
+  const header = parseCsvLine(lines[0]).map((cell) =>
+    cell.trim().toLowerCase(),
+  );
   const missingColumns = REQUIRED_COLUMNS.filter(
     (column) => !header.includes(column),
   );
@@ -70,7 +108,7 @@ export function parseTasksCsv(content: string): ParseTasksCsvResult {
 
   for (let i = 0; i < dataLines.length; i++) {
     const row = i + 2;
-    const cells = dataLines[i].split(',').map((cell) => cell.trim());
+    const cells = parseCsvLine(dataLines[i]).map((cell) => cell.trim());
 
     if (cells.length !== header.length) {
       return {

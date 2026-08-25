@@ -142,6 +142,69 @@ describe('parseTasksCsv', () => {
     });
   });
 
+  it('parses a quoted field containing a comma', () => {
+    const csv = [
+      'title,status,label,priority',
+      '"Fix the bug, again",todo,bug,high',
+    ].join('\n');
+
+    const result = parseTasksCsv(csv);
+
+    expect(result).toEqual({
+      ok: true,
+      rows: [
+        {
+          title: 'Fix the bug, again',
+          status: 'todo',
+          label: 'bug',
+          priority: 'high',
+        },
+      ],
+    });
+  });
+
+  it('unescapes a doubled quote inside a quoted field', () => {
+    const csv = [
+      'title,status,label,priority',
+      '"Say ""hello""",todo,bug,high',
+    ].join('\n');
+
+    const result = parseTasksCsv(csv);
+
+    expect(result).toEqual({
+      ok: true,
+      rows: [
+        {
+          title: 'Say "hello"',
+          status: 'todo',
+          label: 'bug',
+          priority: 'high',
+        },
+      ],
+    });
+  });
+
+  it('handles a quoted field that is not the last column', () => {
+    const csv = [
+      'title,status,label,priority',
+      '"Ship it, finally",done,feature,high',
+    ].join('\n');
+
+    const result = parseTasksCsv(csv);
+
+    expect(result).toEqual({
+      ok: true,
+      rows: [
+        {
+          title: 'Ship it, finally',
+          status: 'done',
+          label: 'feature',
+          priority: 'high',
+        },
+      ],
+    });
+  });
+
   it('reports the correct row number for an error past the first data row', () => {
     const csv = [
       'title,status,label,priority',
