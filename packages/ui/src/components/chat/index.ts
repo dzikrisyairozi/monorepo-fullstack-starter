@@ -1,5 +1,5 @@
 export { AgentLoader } from './agent-loader';
-export { SourceChip, SourceChipGroup, type ChatSource } from './source-chip';
+export { SourceChipGroup, type ChatSource } from './source-chip';
 export {
   ToolChip,
   type ToolInvocation,

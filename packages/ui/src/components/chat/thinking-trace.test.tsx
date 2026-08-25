@@ -28,7 +28,7 @@ describe('ThinkingTrace', () => {
     expect(screen.queryByText('Read the file')).toBeNull();
   });
 
-  it('shows placeholder copy for empty reasoning, search, and coding tabs', async () => {
+  it('shows placeholder copy for empty reasoning and search tabs, and has no coding tab', async () => {
     const user = userEvent.setup();
     render(<ThinkingTrace steps={steps} durationLabel="1.0s" />);
 
@@ -39,7 +39,6 @@ describe('ThinkingTrace', () => {
     await user.click(screen.getByRole('tab', { name: 'Search' }));
     expect(screen.getByText('No search results.')).toBeTruthy();
 
-    await user.click(screen.getByRole('tab', { name: 'Coding' }));
-    expect(screen.getByText('No code recorded.')).toBeTruthy();
+    expect(screen.queryByRole('tab', { name: 'Coding' })).toBeNull();
   });
 });

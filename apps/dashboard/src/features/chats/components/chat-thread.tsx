@@ -141,7 +141,6 @@ export function ChatThread({
                               durationLabel={segment.durationLabel}
                               reasoning={segment.reasoning}
                               searchResults={segment.searchResults}
-                              code={segment.code}
                             />
                           );
                         }

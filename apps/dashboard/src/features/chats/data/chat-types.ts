@@ -25,7 +25,6 @@ export type ChatMessageSegment =
       durationLabel: string;
       reasoning?: string;
       searchResults?: ThinkingSearchResult[];
-      code?: string;
     }
   | { type: 'tools'; invocations: ToolInvocation[]; messageCount: number }
   | { type: 'tasks'; tasks: ChatTask[] }

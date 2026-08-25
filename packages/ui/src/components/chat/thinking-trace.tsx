@@ -20,14 +20,12 @@ export function ThinkingTrace({
   durationLabel,
   reasoning,
   searchResults = [],
-  code,
   className,
 }: {
   steps: ThinkingStep[];
   durationLabel: string;
   reasoning?: string;
   searchResults?: ThinkingSearchResult[];
-  code?: string;
   className?: string;
 }) {
   const [expanded, setExpanded] = useState(false);
@@ -68,9 +66,6 @@ export function ThinkingTrace({
               <TabsTrigger value="search" className="text-xs">
                 Search
               </TabsTrigger>
-              <TabsTrigger value="coding" className="text-xs">
-                Coding
-              </TabsTrigger>
             </TabsList>
             <TabsContent value="steps" className="mt-2 space-y-1">
               {steps.map((step) => (
@@ -95,17 +90,6 @@ export function ThinkingTrace({
               ) : (
                 <p className="text-xs text-muted-foreground">
                   No search results.
-                </p>
-              )}
-            </TabsContent>
-            <TabsContent value="coding" className="mt-2">
-              {code ? (
-                <pre className="overflow-x-auto rounded bg-background p-2 text-xs">
-                  <code>{code}</code>
-                </pre>
-              ) : (
-                <p className="text-xs text-muted-foreground">
-                  No code recorded.
                 </p>
               )}
             </TabsContent>
