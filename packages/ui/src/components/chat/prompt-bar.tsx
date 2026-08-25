@@ -46,6 +46,7 @@ export function PromptBar({
         }}
         onKeyDown={handleKeyDown}
         placeholder={placeholder}
+        aria-label={placeholder}
         rows={1}
         style={{ maxHeight }}
         className="block w-full resize-none overflow-y-auto bg-transparent text-sm outline-none placeholder:text-muted-foreground"

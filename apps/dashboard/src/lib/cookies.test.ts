@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import { getCookie, removeCookie, setCookie } from './cookies';
 
 afterEach(() => {
@@ -31,5 +31,16 @@ describe('cookies', () => {
 
     removeCookie('temp');
     expect(getCookie('temp')).toBeNull();
+  });
+
+  it('sets SameSite=Lax so the cookie is not sent on cross-site requests', () => {
+    const setSpy = vi.spyOn(document, 'cookie', 'set');
+    setCookie('theme', 'dark', 60);
+
+    expect(setSpy).toHaveBeenCalledWith(
+      expect.stringContaining('SameSite=Lax'),
+    );
+
+    setSpy.mockRestore();
   });
 });

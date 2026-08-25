@@ -11,7 +11,7 @@ export function getCookie(name: string): string | null {
 }
 
 export function setCookie(name: string, value: string, maxAge: number): void {
-  document.cookie = `${encodeURIComponent(name)}=${encodeURIComponent(value)}; path=/; max-age=${maxAge}`;
+  document.cookie = `${encodeURIComponent(name)}=${encodeURIComponent(value)}; path=/; max-age=${maxAge}; SameSite=Lax`;
 }
 
 export function removeCookie(name: string): void {

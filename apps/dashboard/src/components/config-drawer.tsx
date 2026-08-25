@@ -24,16 +24,17 @@ import {
   DEFAULT_FONT,
   type Font,
 } from '../context/font-provider';
-
-// Matches ThemeProvider's defaultTheme prop in main.tsx.
-const DEFAULT_THEME = 'dark';
+import { DEFAULT_THEME } from './theme-provider';
 
 function RadioRow({
+  name,
   label,
   value,
   onChange,
   options,
 }: {
+  /** Untranslated, HTML-id-safe key - the visible label may be translated. */
+  name: string;
   label: string;
   value: string;
   onChange: (value: string) => void;
@@ -51,10 +52,10 @@ function RadioRow({
           <div key={option.value} className="flex items-center gap-2">
             <RadioGroupItem
               value={option.value}
-              id={`${label}-${option.value}`}
+              id={`${name}-${option.value}`}
             />
             <Label
-              htmlFor={`${label}-${option.value}`}
+              htmlFor={`${name}-${option.value}`}
               className="text-sm font-normal"
             >
               {option.label}
@@ -111,18 +112,21 @@ export function ConfigDrawer() {
         </DrawerHeader>
         <div className="space-y-6 overflow-y-auto px-4">
           <RadioRow
+            name="variant"
             label={t('configDrawer.sidebarVariant')}
             value={variant}
             onChange={(value) => setVariant(value as Variant)}
             options={variants}
           />
           <RadioRow
+            name="collapsible"
             label={t('configDrawer.sidebarCollapsible')}
             value={collapsible}
             onChange={(value) => setCollapsible(value as Collapsible)}
             options={collapsibleModes}
           />
           <RadioRow
+            name="theme"
             label={t('configDrawer.theme')}
             value={theme ?? 'system'}
             onChange={setTheme}
@@ -133,6 +137,7 @@ export function ConfigDrawer() {
             ]}
           />
           <RadioRow
+            name="font"
             label={t('configDrawer.font.label')}
             value={font}
             onChange={(value) => setFont(value as Font)}
