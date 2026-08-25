@@ -24,6 +24,8 @@ import { showSubmittedData } from '../../../lib/show-submitted-data';
 import { type Task } from '../data/schema';
 import { parseTasksCsv, type ParseTasksCsvError } from '../lib/parse-tasks-csv';
 
+const MAX_CSV_FILE_SIZE_BYTES = 2_000_000;
+
 function errorMessage(
   t: (key: string, options?: Record<string, unknown>) => string,
   error: ParseTasksCsvError,
@@ -57,6 +59,14 @@ export function TasksImportDialog({
     }
     if (!file.name.toLowerCase().endsWith('.csv')) {
       setError(t('tasks.import.wrongExtension'));
+      return;
+    }
+    if (file.size > MAX_CSV_FILE_SIZE_BYTES) {
+      setError(
+        t('tasks.import.tooLarge', {
+          maxSizeMb: MAX_CSV_FILE_SIZE_BYTES / 1_000_000,
+        }),
+      );
       return;
     }
 

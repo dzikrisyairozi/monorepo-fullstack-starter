@@ -351,6 +351,7 @@
       "description": "Import tasks from a CSV file. Columns required: title, status, label, priority.",
       "filePrompt": "CSV file",
       "wrongExtension": "Please upload a .csv file.",
+      "tooLarge": "File is too large - the limit is {{maxSizeMb}}MB.",
       "confirm": "Import {{count}} task(s)",
       "errors": {
         "empty": "The file is empty.",

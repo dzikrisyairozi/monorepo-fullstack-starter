@@ -351,6 +351,7 @@
       "description": "Impor tugas dari berkas CSV. Kolom yang wajib: title, status, label, priority.",
       "filePrompt": "Berkas CSV",
       "wrongExtension": "Silakan unggah berkas .csv.",
+      "tooLarge": "Berkas terlalu besar - batas maksimum {{maxSizeMb}}MB.",
       "confirm": "Impor {{count}} tugas",
       "errors": {
         "empty": "Berkas kosong.",
