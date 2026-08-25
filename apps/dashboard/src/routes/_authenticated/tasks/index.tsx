@@ -1,5 +1,4 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { z } from 'zod';
 import { useTranslation } from '@repo/i18n';
 import { Header } from '../../../components/layout/header';
 import { Main } from '../../../components/layout/main';
@@ -12,17 +11,10 @@ import { TasksPrimaryButtons } from '../../../features/tasks/components/tasks-pr
 import { TasksProvider } from '../../../features/tasks/components/tasks-provider';
 import { TasksTable } from '../../../features/tasks/components/tasks-table';
 import { tasks } from '../../../features/tasks/data/tasks';
-
-const tasksSearchSchema = z.object({
-  page: z.number().optional(),
-  pageSize: z.number().optional(),
-  sortBy: z.string().optional(),
-  sortDir: z.enum(['asc', 'desc']).optional(),
-  filters: z.record(z.string(), z.string()).optional(),
-});
+import { tableSearchSchema } from '../../../hooks/use-table-url-state';
 
 export const Route = createFileRoute('/_authenticated/tasks/')({
-  validateSearch: tasksSearchSchema,
+  validateSearch: tableSearchSchema,
   component: TasksPage,
 });
 

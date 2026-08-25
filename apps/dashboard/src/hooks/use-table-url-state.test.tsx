@@ -7,7 +7,7 @@ import {
   createRouter,
   RouterProvider,
 } from '@tanstack/react-router';
-import { useTableUrlState } from './use-table-url-state';
+import { tableSearchSchema, useTableUrlState } from './use-table-url-state';
 
 function TestPage() {
   const {
@@ -108,5 +108,32 @@ describe('useTableUrlState', () => {
 
     expect(screen.getByTestId('filters').textContent).toBe('{}');
     expect(screen.getByTestId('page').textContent).toBe('1');
+  });
+});
+
+describe('tableSearchSchema', () => {
+  it('accepts valid page and pageSize', () => {
+    expect(tableSearchSchema.parse({ page: 3, pageSize: 25 })).toEqual({
+      page: 3,
+      pageSize: 25,
+    });
+  });
+
+  it('falls back page to undefined instead of throwing on 0 or negative', () => {
+    expect(tableSearchSchema.parse({ page: 0 }).page).toBeUndefined();
+    expect(tableSearchSchema.parse({ page: -5 }).page).toBeUndefined();
+  });
+
+  it('falls back pageSize to undefined instead of throwing when out of [1, 100]', () => {
+    expect(tableSearchSchema.parse({ pageSize: 0 }).pageSize).toBeUndefined();
+    expect(
+      tableSearchSchema.parse({ pageSize: 100000 }).pageSize,
+    ).toBeUndefined();
+  });
+
+  it('leaves page and pageSize undefined when omitted', () => {
+    const parsed = tableSearchSchema.parse({});
+    expect(parsed.page).toBeUndefined();
+    expect(parsed.pageSize).toBeUndefined();
   });
 });

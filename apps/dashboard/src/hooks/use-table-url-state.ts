@@ -1,7 +1,22 @@
 import { useNavigate, useSearch } from '@tanstack/react-router';
+import { z } from 'zod';
 
 export type TableSort = { id: string; desc: boolean } | null;
 export type TableFilters = Record<string, string>;
+
+/**
+ * Shared validateSearch schema for any route backed by useTableUrlState.
+ * Out-of-range page/pageSize values fall back to undefined (and from there
+ * to useTableUrlState's own page 1 / size 10 defaults) via .catch() rather
+ * than erroring the route.
+ */
+export const tableSearchSchema = z.object({
+  page: z.number().int().min(1).optional().catch(undefined),
+  pageSize: z.number().int().min(1).max(100).optional().catch(undefined),
+  sortBy: z.string().optional(),
+  sortDir: z.enum(['asc', 'desc']).optional(),
+  filters: z.record(z.string(), z.string()).optional(),
+});
 
 type TableSearch = {
   page?: number;
