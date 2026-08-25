@@ -45,4 +45,10 @@ yarn-error.log*
 .claude/
 
 .serena/
+
+# tasks/ is per-feature execution scratch (task checklists, status) with no
+# lasting value once a PR merges, so it's gitignored. spec/ is deliberately
+# NOT gitignored - it documents lasting design decisions (scope, acceptance
+# criteria, rationale) worth keeping in history alongside the code it
+# describes, unlike a todo list.
 /tasks/
