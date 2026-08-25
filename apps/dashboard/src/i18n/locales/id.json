@@ -450,6 +450,15 @@
     "noResults": "Tidak ada percakapan ditemukan.",
     "today": "Hari ini",
     "yesterday": "Kemarin",
-    "back": "Kembali"
+    "back": "Kembali",
+    "promptPlaceholder": "Tanya apa saja...",
+    "send": "Kirim",
+    "stepsCount_one": "{{count}} langkah",
+    "stepsCount_other": "{{count}} langkah",
+    "stepsTab": "Langkah",
+    "reasoningTab": "Alasan",
+    "searchTab": "Pencarian",
+    "noReasoningRecorded": "Tidak ada alasan yang tercatat.",
+    "noSearchResults": "Tidak ada hasil pencarian."
   }
 }

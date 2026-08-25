@@ -41,4 +41,32 @@ describe('ThinkingTrace', () => {
 
     expect(screen.queryByRole('tab', { name: 'Coding' })).toBeNull();
   });
+
+  it('lets a caller override every label, so a consumer can localize it', async () => {
+    const user = userEvent.setup();
+    render(
+      <ThinkingTrace
+        steps={steps}
+        durationLabel="4.2s"
+        stepsLabel="2 langkah"
+        stepsTabLabel="Langkah"
+        reasoningTabLabel="Alasan"
+        searchTabLabel="Pencarian"
+        noReasoningLabel="Tidak ada alasan yang tercatat."
+        noSearchResultsLabel="Tidak ada hasil pencarian."
+      />,
+    );
+
+    expect(screen.getByText('2 langkah')).toBeTruthy();
+    expect(screen.queryByText('2 steps')).toBeNull();
+
+    await user.click(screen.getByRole('button'));
+    expect(screen.getByRole('tab', { name: 'Langkah' })).toBeTruthy();
+
+    await user.click(screen.getByRole('tab', { name: 'Alasan' }));
+    expect(screen.getByText('Tidak ada alasan yang tercatat.')).toBeTruthy();
+
+    await user.click(screen.getByRole('tab', { name: 'Pencarian' }));
+    expect(screen.getByText('Tidak ada hasil pencarian.')).toBeTruthy();
+  });
 });

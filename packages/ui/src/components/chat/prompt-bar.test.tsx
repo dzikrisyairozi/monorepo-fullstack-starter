@@ -52,4 +52,19 @@ describe('PromptBar', () => {
     await user.keyboard('{Enter}');
     expect(onSend).not.toHaveBeenCalled();
   });
+
+  it('lets a caller override the placeholder and send label, so a consumer can localize it', () => {
+    render(
+      <PromptBar
+        value=""
+        onValueChange={() => {}}
+        onSend={() => {}}
+        placeholder="Tanya apa saja..."
+        sendLabel="Kirim"
+      />,
+    );
+
+    expect(screen.getByPlaceholderText('Tanya apa saja...')).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'Kirim' })).toBeTruthy();
+  });
 });

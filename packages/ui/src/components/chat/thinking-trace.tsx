@@ -21,12 +21,25 @@ export function ThinkingTrace({
   reasoning,
   searchResults = [],
   className,
+  stepsLabel,
+  stepsTabLabel = 'Steps',
+  reasoningTabLabel = 'Reasoning',
+  searchTabLabel = 'Search',
+  noReasoningLabel = 'No reasoning recorded.',
+  noSearchResultsLabel = 'No search results.',
 }: {
   steps: ThinkingStep[];
   durationLabel: string;
   reasoning?: string;
   searchResults?: ThinkingSearchResult[];
   className?: string;
+  /** Pre-formatted, e.g. from an i18n plural rule. Defaults to English. */
+  stepsLabel?: string;
+  stepsTabLabel?: string;
+  reasoningTabLabel?: string;
+  searchTabLabel?: string;
+  noReasoningLabel?: string;
+  noSearchResultsLabel?: string;
 }) {
   const [expanded, setExpanded] = useState(false);
 
@@ -39,7 +52,7 @@ export function ThinkingTrace({
         className="flex w-full items-center justify-between gap-2 px-3 py-1.5 text-left text-xs text-muted-foreground"
       >
         <span>
-          {steps.length} step{steps.length === 1 ? '' : 's'}
+          {stepsLabel ?? `${steps.length} step${steps.length === 1 ? '' : 's'}`}
         </span>
         <span className="flex items-center gap-2">
           <span className="rounded-full border bg-background px-1.5 py-0.5 font-mono text-[10px]">
@@ -58,13 +71,13 @@ export function ThinkingTrace({
           <Tabs defaultValue="steps">
             <TabsList className="h-8">
               <TabsTrigger value="steps" className="text-xs">
-                Steps
+                {stepsTabLabel}
               </TabsTrigger>
               <TabsTrigger value="reasoning" className="text-xs">
-                Reasoning
+                {reasoningTabLabel}
               </TabsTrigger>
               <TabsTrigger value="search" className="text-xs">
-                Search
+                {searchTabLabel}
               </TabsTrigger>
             </TabsList>
             <TabsContent value="steps" className="mt-2 space-y-1">
@@ -78,7 +91,7 @@ export function ThinkingTrace({
               value="reasoning"
               className="mt-2 text-xs whitespace-pre-wrap text-muted-foreground"
             >
-              {reasoning || 'No reasoning recorded.'}
+              {reasoning || noReasoningLabel}
             </TabsContent>
             <TabsContent value="search" className="mt-2 space-y-1">
               {searchResults.length ? (
@@ -89,7 +102,7 @@ export function ThinkingTrace({
                 ))
               ) : (
                 <p className="text-xs text-muted-foreground">
-                  No search results.
+                  {noSearchResultsLabel}
                 </p>
               )}
             </TabsContent>

@@ -10,6 +10,7 @@ export function PromptBar({
   onSend,
   maxHeight = 200,
   placeholder = 'Ask anything...',
+  sendLabel = 'Send',
   className,
 }: {
   value: string;
@@ -17,6 +18,7 @@ export function PromptBar({
   onSend: (value: string) => void;
   maxHeight?: number;
   placeholder?: string;
+  sendLabel?: string;
   className?: string;
 }) {
   function resizeTextarea(el: HTMLTextAreaElement) {
@@ -57,7 +59,7 @@ export function PromptBar({
             if (trimmed) onSend(trimmed);
           }}
         >
-          Send
+          {sendLabel}
         </Button>
       </div>
     </div>

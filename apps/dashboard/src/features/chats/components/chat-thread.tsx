@@ -141,6 +141,14 @@ export function ChatThread({
                               durationLabel={segment.durationLabel}
                               reasoning={segment.reasoning}
                               searchResults={segment.searchResults}
+                              stepsLabel={t('chats.stepsCount', {
+                                count: segment.steps.length,
+                              })}
+                              stepsTabLabel={t('chats.stepsTab')}
+                              reasoningTabLabel={t('chats.reasoningTab')}
+                              searchTabLabel={t('chats.searchTab')}
+                              noReasoningLabel={t('chats.noReasoningRecorded')}
+                              noSearchResultsLabel={t('chats.noSearchResults')}
                             />
                           );
                         }
@@ -201,6 +209,8 @@ export function ChatThread({
             value={promptValue}
             onValueChange={setPromptValue}
             onSend={handleSend}
+            placeholder={t('chats.promptPlaceholder')}
+            sendLabel={t('chats.send')}
           />
         </div>
       </div>

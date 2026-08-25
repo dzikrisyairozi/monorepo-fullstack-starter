@@ -450,6 +450,15 @@
     "noResults": "No conversations found.",
     "today": "Today",
     "yesterday": "Yesterday",
-    "back": "Back"
+    "back": "Back",
+    "promptPlaceholder": "Ask anything...",
+    "send": "Send",
+    "stepsCount_one": "{{count}} step",
+    "stepsCount_other": "{{count}} steps",
+    "stepsTab": "Steps",
+    "reasoningTab": "Reasoning",
+    "searchTab": "Search",
+    "noReasoningRecorded": "No reasoning recorded.",
+    "noSearchResults": "No search results."
   }
 }
