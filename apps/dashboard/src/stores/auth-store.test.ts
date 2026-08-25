@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import { AUTH_TOKEN_COOKIE_NAME, useAuthStore } from './auth-store';
 import { getCookie } from '../lib/cookies';
 
@@ -38,5 +38,22 @@ describe('useAuthStore', () => {
     expect(useAuthStore.getState().user).toBeNull();
     expect(useAuthStore.getState().accessToken).toBeNull();
     expect(getCookie(AUTH_TOKEN_COOKIE_NAME)).toBeNull();
+  });
+
+  it('restores the signed-in user (not just the token) on reload', async () => {
+    useAuthStore
+      .getState()
+      .signIn({ name: 'Alice Example', email: 'alice@corp.com' }, 'tok_456');
+
+    vi.resetModules();
+    const fresh = await import('./auth-store');
+
+    expect(fresh.useAuthStore.getState().accessToken).toBe('tok_456');
+    expect(fresh.useAuthStore.getState().user).toEqual({
+      name: 'Alice Example',
+      email: 'alice@corp.com',
+    });
+
+    fresh.useAuthStore.getState().signOut();
   });
 });

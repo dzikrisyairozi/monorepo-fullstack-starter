@@ -10,6 +10,7 @@ import { NavUser } from './nav-user';
 import { TeamSwitcher } from './team-switcher';
 import { sidebarData } from './data/sidebar-data';
 import { type Collapsible, type Variant } from '../../context/layout-provider';
+import { useCurrentUser } from '../../hooks/use-current-user';
 
 export function AppSidebar({
   variant,
@@ -18,6 +19,8 @@ export function AppSidebar({
   variant: Variant;
   collapsible: Collapsible;
 }) {
+  const user = useCurrentUser();
+
   return (
     <Sidebar collapsible={collapsible} variant={variant}>
       <SidebarHeader>
@@ -29,7 +32,7 @@ export function AppSidebar({
         ))}
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={sidebarData.user} />
+        <NavUser user={user} />
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>

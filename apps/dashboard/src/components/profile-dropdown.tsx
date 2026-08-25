@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, type LinkProps } from '@tanstack/react-router';
+import { Link } from '@tanstack/react-router';
 import { LogOut, Settings, UserCog } from 'lucide-react';
 import { useTranslation } from '@repo/i18n';
 import { Button } from '@repo/ui/components/ui/button';
@@ -17,18 +17,14 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@repo/ui/components/ui/dropdown-menu';
-import { sidebarData } from './layout/data/sidebar-data';
 import { SignOutDialog } from './sign-out-dialog';
+import { useCurrentUser } from '../hooks/use-current-user';
 import { getInitials } from '../lib/utils';
-
-// Settings routes land in a later phase - typed loosely so this
-// compiles against the current route tree in the meantime.
-const SETTINGS_URL: LinkProps['to'] | (string & {}) = '/settings';
 
 export function ProfileDropdown() {
   const { t } = useTranslation('dashboard');
   const [signOutOpen, setSignOutOpen] = useState(false);
-  const { user } = sidebarData;
+  const user = useCurrentUser();
 
   return (
     <>
@@ -51,13 +47,13 @@ export function ProfileDropdown() {
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
             <DropdownMenuItem asChild>
-              <Link to={SETTINGS_URL}>
+              <Link to="/settings">
                 <UserCog />
                 {t('profileDropdown.profile')}
               </Link>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
-              <Link to={SETTINGS_URL}>
+              <Link to="/settings">
                 <Settings />
                 {t('profileDropdown.settings')}
               </Link>
