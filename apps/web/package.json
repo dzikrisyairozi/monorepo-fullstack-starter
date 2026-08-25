@@ -16,7 +16,7 @@
     "@repo/ui": "workspace:*",
     "framer-motion": "^13.1.1",
     "lucide-react": "^1.33.0",
-    "next": "16.3.1",
+    "next": "16.3.2",
     "react": "19.2.8",
     "react-dom": "19.2.8",
     "three": "^0.185.1"
@@ -28,7 +28,7 @@
     "@types/react-dom": "^19",
     "@types/three": "^0.185.4",
     "eslint": "^9.39.5",
-    "eslint-config-next": "16.3.1",
+    "eslint-config-next": "16.3.2",
     "tailwindcss": "^4",
     "typescript": "^6.0.3"
   }
