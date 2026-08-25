@@ -7,9 +7,6 @@ import {
   scriptedTools,
 } from '../data/scripted-reply';
 
-export type ReplayStage =
-  'idle' | 'loading' | 'thinking' | 'tools' | 'streaming' | 'done';
-
 function makeMessage(
   role: ChatMessage['role'],
   segments: ChatMessageSegment[],
@@ -24,7 +21,6 @@ function makeMessage(
 
 export function useChatReplay(initialMessages: ChatMessage[]) {
   const [messages, setMessages] = useState(initialMessages);
-  const [stage, setStage] = useState<ReplayStage>('idle');
   const prefersReducedMotion = usePrefersReducedMotion();
   const timersRef = useRef<ReturnType<typeof setTimeout>[]>([]);
 
@@ -33,7 +29,6 @@ export function useChatReplay(initialMessages: ChatMessage[]) {
     // statement of the effect body.
     queueMicrotask(() => {
       setMessages(initialMessages);
-      setStage('idle');
     });
   }, [initialMessages]);
 
@@ -73,11 +68,9 @@ export function useChatReplay(initialMessages: ChatMessage[]) {
           segments: [scriptedThinking, scriptedTools, scriptedStreamed],
         },
       ]);
-      setStage('done');
       return;
     }
 
-    setStage('loading');
     setMessages((prev) => [
       ...prev,
       {
@@ -90,15 +83,12 @@ export function useChatReplay(initialMessages: ChatMessage[]) {
 
     timersRef.current = [
       setTimeout(() => {
-        setStage('thinking');
         setAssistantSegments(assistantId, [scriptedThinking]);
       }, 1000),
       setTimeout(() => {
-        setStage('tools');
         setAssistantSegments(assistantId, [scriptedThinking, scriptedTools]);
       }, 2200),
       setTimeout(() => {
-        setStage('streaming');
         setAssistantSegments(assistantId, [
           scriptedThinking,
           scriptedTools,
@@ -108,5 +98,5 @@ export function useChatReplay(initialMessages: ChatMessage[]) {
     ];
   }
 
-  return { messages, stage, send };
+  return { messages, send };
 }
