@@ -52,7 +52,7 @@ export function UserAuthForm({ redirectTo }: { redirectTo?: string }) {
 
   const onSubmit = (values: SignInValues) => {
     setIsSubmitting(true);
-    signIn({ name: 'Dzikri Syairozi', email: values.email }, 'mock_token');
+    signIn({ name: 'Jane Doe', email: values.email }, 'mock_token');
     navigate({ to: redirectTo || '/' });
   };
 

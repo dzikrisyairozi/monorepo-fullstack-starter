@@ -29,7 +29,7 @@ across every workspace via Turborepo).
 
 **There is no real backend behind sign-in.** `sign-in`, `sign-in-2`, and `sign-up` all accept
 any email/password combination and call `useAuthStore.signIn()` with a hardcoded user
-(`Dzikri Syairozi`) and a literal `'mock_token'` string — see
+(`Jane Doe`) and a literal `'mock_token'` string — see
 `src/features/auth/sign-in/components/user-auth-form.tsx`. The token is persisted to a cookie
 and is what `_authenticated/route.tsx` checks before allowing access; there is no JWT
 validation, no expiry check beyond the cookie's own max-age, and no call to `apps/api`. Treat
