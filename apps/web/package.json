@@ -14,9 +14,9 @@
     "@repo/i18n": "workspace:*",
     "@repo/tailwind-config": "workspace:*",
     "@repo/ui": "workspace:*",
-    "framer-motion": "^13.2.0",
-    "lucide-react": "^1.44.0",
-    "next": "16.3.4",
+    "framer-motion": "^13.4.0",
+    "lucide-react": "^1.47.0",
+    "next": "16.3.5",
     "react": "19.3.0",
     "react-dom": "19.3.0",
     "three": "^0.186.0"
@@ -26,9 +26,9 @@
     "@types/node": "^26",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@types/three": "^0.185.4",
+    "@types/three": "^0.186.0",
     "eslint": "^9.39.5",
-    "eslint-config-next": "16.3.4",
+    "eslint-config-next": "16.3.5",
     "tailwindcss": "^4",
     "typescript": "^6.0.3"
   }
