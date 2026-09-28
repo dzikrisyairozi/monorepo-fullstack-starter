@@ -170,9 +170,15 @@ For feature requests:
 
 ## 🔄 Pull Request Process
 
+`main` is production and `staging` is development. Feature branches start
+from `staging` and open their PR against `staging`; a `staging` -> `main` PR
+(merged with "Create a merge commit") ships a release, and a `v*` tag on
+`main` builds and deploys it. CI runs on pull requests only.
+
 1. **Create a feature branch**
 
    ```bash
+   git checkout staging && git pull
    git checkout -b feat/your-feature-name
    ```
 
@@ -196,7 +202,7 @@ For feature requests:
    git commit -m "feat: add your feature"
    ```
 
-5. **Push and create PR**
+5. **Push and create a PR into `staging`**
 
    ```bash
    git push origin feat/your-feature-name

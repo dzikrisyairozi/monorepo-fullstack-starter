@@ -1,11 +1,11 @@
 version: 2
 updates:
-  # Single weekly update for all dependencies
+  # Single monthly update for all dependencies
   - package-ecosystem: 'npm'
     directory: '/'
+    target-branch: 'staging'
     schedule:
-      interval: 'weekly'
-      day: 'monday'
+      interval: 'monthly'
       time: '09:00'
     open-pull-requests-limit: 1
     reviewers:
@@ -45,9 +45,9 @@ updates:
   # GitHub Actions updates (separate from npm deps)
   - package-ecosystem: 'github-actions'
     directory: '/'
+    target-branch: 'staging'
     schedule:
-      interval: 'weekly'
-      day: 'monday'
+      interval: 'monthly'
       time: '10:00'
     open-pull-requests-limit: 1
     reviewers:
