@@ -1,151 +1,103 @@
 name: Release
 
+# The only workflow that builds an image. A v* tag on main creates the
+# GitHub Release, pushes the API image to GHCR and rolls it out to the VPS.
+# CI is not re-run here: the staging -> main PR already ran it on this
+# exact code.
 on:
   push:
-    tags:
-      - 'v*'
+    tags: ['v*']
 
-env:
-  NODE_VERSION: '20'
-  PNPM_VERSION: '9.0.0'
+concurrency:
+  group: release
+  cancel-in-progress: false
 
 jobs:
   release:
-    name: Create Release
+    name: Release, publish & deploy
     runs-on: ubuntu-latest
     permissions:
       contents: write
       packages: write
+    env:
+      TAG: ${{ github.ref_name }}
+      SSH_HOST: ${{ secrets.SSH_HOST }}
 
     steps:
-      - name: Checkout code
+      - name: Checkout tagged commit
         uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v7
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          registry-url: 'https://registry.npmjs.org'
+      - name: Refuse tags that are not on main
+        run: git merge-base --is-ancestor "$GITHUB_SHA" origin/main
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v6
-        with:
-          version: ${{ env.PNPM_VERSION }}
-
-      - name: Get pnpm store directory
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-
-      - name: Setup pnpm cache
-        uses: actions/cache@v6
-        with:
-          path: ${{ env.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Run quality checks
-        run: |
-          pnpm run type-check
-          pnpm run lint:check
-          pnpm run format:check
-          pnpm run test
-
-      - name: Build application
-        run: pnpm run build
-
-      - name: Generate changelog
-        id: changelog
-        run: |
-          # Extract version from tag
-          VERSION=${GITHUB_REF#refs/tags/}
-          echo "version=$VERSION" >> $GITHUB_OUTPUT
-
-          # Generate changelog from commits since last tag
-          PREVIOUS_TAG=$(git describe --tags --abbrev=0 HEAD^ 2>/dev/null || echo "")
-          if [ -n "$PREVIOUS_TAG" ]; then
-            CHANGELOG=$(git log $PREVIOUS_TAG..HEAD --pretty=format:"- %s (%h)" --no-merges)
-          else
-            CHANGELOG=$(git log --pretty=format:"- %s (%h)" --no-merges)
-          fi
-
-          # Save changelog to file
-          echo "## What's Changed" > CHANGELOG.md
-          echo "" >> CHANGELOG.md
-          echo "$CHANGELOG" >> CHANGELOG.md
-          echo "" >> CHANGELOG.md
-          echo "**Full Changelog**: https://github.com/${{ github.repository }}/compare/$PREVIOUS_TAG...$VERSION" >> CHANGELOG.md
+      # Derived from the repo name (lowercased, as GHCR requires), so a
+      # project created from this template needs no edits here.
+      - name: Image name
+        run: echo "IMAGE=ghcr.io/${GITHUB_REPOSITORY,,}-api" >> "$GITHUB_ENV"
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v3
         with:
-          tag_name: ${{ steps.changelog.outputs.version }}
-          name: Release ${{ steps.changelog.outputs.version }}
-          body_path: CHANGELOG.md
-          files: |
-            dist/**/*
           generate_release_notes: true
-          draft: false
-          prerelease: ${{ contains(steps.changelog.outputs.version, '-') }}
+          prerelease: ${{ contains(github.ref_name, '-') }}
 
-      - name: Build Docker image
-        if: startsWith(github.ref, 'refs/tags/v')
-        run: |
-          # Create a simple Dockerfile if it doesn't exist
-          if [ ! -f Dockerfile ]; then
-            cat > Dockerfile << 'EOF'
-          FROM node:20-alpine
-
-          WORKDIR /app
-
-          # Copy package files
-          COPY package*.json pnpm-lock.yaml ./
-
-          # Install pnpm and dependencies
-          RUN npm install -g pnpm
-          RUN pnpm install --frozen-lockfile --prod
-
-          # Copy built application
-          COPY dist/ ./dist/
-
-          # Expose port
-          EXPOSE 3000
-
-          # Start the application
-          CMD ["node", "dist/main"]
-          EOF
-          fi
-
-          # Build and tag Docker image
-          docker build -t ${{ github.repository }}:${{ steps.changelog.outputs.version }} .
-          docker build -t ${{ github.repository }}:latest .
-
-      - name: Deploy to production
-        if: ${{ !contains(steps.changelog.outputs.version, '-') }}
-        run: |
-          echo "Deploying release ${{ steps.changelog.outputs.version }} to production..."
-          # Add your production deployment commands here
-          # Examples:
-          # - Deploy Docker image to registry
-          # - Update Kubernetes deployments
-          # - Deploy to cloud providers
-
-      - name: Notify release
-        uses: 8398a7/action-slack@v3
+      - name: Log in to GHCR
+        uses: docker/login-action@v4
         with:
-          status: ${{ job.status }}
-          channel: '#releases'
-          text: |
-            🚀 New release deployed!
-            Version: ${{ steps.changelog.outputs.version }}
-            Repository: ${{ github.repository }}
-          webhook_url: ${{ secrets.SLACK_WEBHOOK }}
-        if: always() && env.SLACK_WEBHOOK != ''
-        env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4
+
+      - name: Build and push
+        uses: docker/build-push-action@v7
+        with:
+          context: .
+          push: true
+          tags: |
+            ${{ env.IMAGE }}:${{ env.TAG }}
+            ${{ env.IMAGE }}:sha-${{ github.sha }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      # Skipped until SSH_HOST / SSH_USER / SSH_KEY repo secrets exist
+      # (the VPS needs /opt/<repo> with a docker-compose.yml and .env).
+      - name: Deploy to VPS
+        if: env.SSH_HOST != ''
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          envs: TAG
+          script: |
+            set -euo pipefail
+            cd /opt/${{ github.event.repository.name }}
+
+            sed -i "s/^IMAGE_TAG=.*/IMAGE_TAG=$TAG/" .env
+            docker compose pull api
+            docker compose up -d api
+
+            # Images without a HEALTHCHECK report plain "running".
+            id=$(docker compose ps -q api)
+            for i in $(seq 1 30); do
+              status=$(docker inspect --format '{{if .State.Health}}{{.State.Health.Status}}{{else}}{{.State.Status}}{{end}}' "$id" 2>/dev/null || echo starting)
+              echo "attempt $i: $status"
+              if [ "$status" = "healthy" ] || [ "$status" = "running" ]; then
+                docker image prune -af --filter "until=72h"
+                exit 0
+              fi
+              if [ "$status" = "unhealthy" ] || [ "$status" = "exited" ]; then break; fi
+              sleep 2
+            done
+
+            echo "API did not come up on $TAG"
+            docker compose logs --tail=100 api
+            exit 1
+
+# Rollback: SSH in, set IMAGE_TAG in /opt/<repo>/.env to a previous tag,
+# then `docker compose pull api && docker compose up -d api`.

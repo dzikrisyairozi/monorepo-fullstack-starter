@@ -305,12 +305,12 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 ### Quick Contribution Steps
 
 1. **Fork the repository**
-2. **Create a feature branch**: `git checkout -b feat/amazing-feature`
+2. **Create a feature branch from `staging`**: `git checkout -b feat/amazing-feature staging`
 3. **Make your changes**
 4. **Run tests**: `pnpm test`
 5. **Commit**: `git commit -m "feat: add amazing feature"`
 6. **Push**: `git push origin feat/amazing-feature`
-7. **Open a Pull Request**
+7. **Open a Pull Request into `staging`**
 
 ## 📄 License
 
