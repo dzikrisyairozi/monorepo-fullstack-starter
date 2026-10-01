@@ -9,7 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@react-three/drei": "^10.7.8",
+    "@react-three/drei": "^10.7.9",
     "@react-three/fiber": "^9.8.1",
     "@repo/i18n": "workspace:*",
     "@repo/tailwind-config": "workspace:*",
