@@ -41,6 +41,10 @@ updates:
         versions: ['>=7']
       - dependency-name: 'eslint'
         versions: ['>=10']
+      # v9 is a full API rewrite that breaks the dashboard's data-table
+      # components. eb3aa4b pinned v8, then this group re-bumped it.
+      - dependency-name: '@tanstack/react-table'
+        versions: ['>=9']
 
   # GitHub Actions updates (separate from npm deps)
   - package-ecosystem: 'github-actions'
