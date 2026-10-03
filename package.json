@@ -55,7 +55,7 @@
     "prettier": "^3.9.9",
     "turbo": "^2.11.5",
     "typescript": "6.0.3",
-    "typescript-eslint": "^8.70.1"
+    "typescript-eslint": "^8.71.0"
   },
   "packageManager": "pnpm@9.0.0",
   "engines": {
